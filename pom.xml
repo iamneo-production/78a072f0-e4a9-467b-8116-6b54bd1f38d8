@@ -32,4 +32,8 @@
             </plugins>
         </pluginManagement>
     </build>
+<<<<<<< HEAD
 </project>
+=======
+</project>
+>>>>>>> 1dae4c0 (changed pom.xml)
