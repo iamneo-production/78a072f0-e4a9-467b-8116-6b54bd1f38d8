@@ -1,2 +1,7 @@
 node_modules/
 done
+
+.classpath
+.settings
+.project
+.gitignore
