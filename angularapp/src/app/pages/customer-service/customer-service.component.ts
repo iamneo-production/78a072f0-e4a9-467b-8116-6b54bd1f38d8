@@ -51,8 +51,9 @@ export class CustomerServiceComponent implements OnInit {
   deleteBooking(id:number) {
     this.customerService.deleteBooking(id).subscribe((data)=>{
       console.log(data);
-      this.ngOnInit
+      
     });
+    window.location.reload();
   }
 
   
