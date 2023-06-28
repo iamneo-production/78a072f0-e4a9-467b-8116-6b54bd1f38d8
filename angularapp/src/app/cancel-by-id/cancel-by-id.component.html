@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<body>
+<div class="container">
+  <h1>Booking Cancellation</h1>
+  <p>Please provide the following details to cancel your booking:</p>
+  <form (ngSubmit)="cancelBooking()">
+    <div class="form-group">
+      <label for="bookingID">Booking ID:</label>
+      <input type="text" id="bookingID" name="bookingID" [(ngModel)]="bookingID" required>
+    </div>
+    <div class="form-group">
+      <label for="reason">Reason for cancellation:</label>
+      <select id="reason" name="reason" [(ngModel)]="reason" required>
+        <option value="personal reason">personal reason/Trip called off</option>
+        <option value="different accomodation">Found a different accomodation option</option>
+        <option value="change of date">change of date</option>
+        <option value="other">None of the above</option>
+      </select>
+    </div>
+    <button type="submit" (click)="cancelBooking()">Cancel Booking</button>
+  </form>
+  <p class="success-message" *ngIf="isCancelled">Booking with ID {{ bookingID }} has been successfully cancelled due to {{ reason }}.</p>
+</div>
+</body>
