@@ -1,0 +1,26 @@
+.roomType{
+    padding-left: 50px;
+    display: flex;
+    
+}
+.Dates{
+    padding-left: 50px;
+}
+
+.Dates2{
+    padding-left: 50px;
+}
+
+.Guests{
+    padding-left: 50px;
+}
+
+.Preferences{
+    padding-left: 50px;;
+}
+.booking-form-container{
+    font-size: 20px;
+}
+.booking-form{
+    padding-left: 50px;
+}

@@ -1,0 +1,50 @@
+<div>
+    <img src="../assets/images/hotel-banner.63885da4032201.67905415.png" alt="">
+    </div>
+    <div class="booking-form-container">
+      <div class="booking-form">
+        <h2>Booking Form</h2>
+    
+        <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+    
+          <div class="roomType">
+            <label for="roomType">Room Type:</label>
+            <select id="roomType" name="roomType"  [(ngModel)]="user.roomType" [ngModelOptions]="{standalone: true}" required>
+              <option value="" disabled>Select Room Type</option>
+              <option *ngFor="let type of roomTypes" [value]="type">{{ type }}</option>
+            </select>
+          </div>
+          <br>
+    
+          <div class="Dates">
+            <label for="checkInDate">Check-in Date:</label>
+            <input type="date" id="checkInDate" name="checkInDate" [(ngModel)]="user.checkInDate" [ngModelOptions]="{standalone: true}" required>
+          </div>
+          <br>
+    
+          <div class="Dates2">
+            <label for="checkOutDate">Check-out Date:</label>
+            <input  type="date" id="checkOutDate" name="checkOutDate" [(ngModel)]="user.checkOutDate" [ngModelOptions]="{standalone: true}" required>
+          </div>
+          <br>
+    
+          <div class="Guests">
+            <label for="guests">Number of Guests:</label>
+            <select id="guests" name="guests" [(ngModel)]="user.guests" [ngModelOptions]="{standalone: true}" required>
+              <option value="" disabled>Select Number of Guests</option>
+              <option *ngFor="let number of numberOfGuests" [value]="number">{{ number }}</option>
+            </select>
+          </div>
+          <br>
+    
+          <div class="Preferences">
+            <label for="preferences">Additional Preferences:</label>
+            <textarea id="preferences" name="preferences" [(ngModel)]="user.preferences" [ngModelOptions]="{standalone: true}"></textarea>
+          </div>
+          <br>
+        <div class="button">
+          <button mat-raised-button color="accent"type="submit" >Book Now</button>
+        </div>
+        </form>
+      </div>
+    </div>
