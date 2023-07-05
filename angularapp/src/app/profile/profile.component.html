@@ -1,6 +1,59 @@
-<p>profile works!</p>
-<html>
-    <body>
-        
-    </body>
-</html>
+<!DOCTYPE html>
+        <body>
+              <div class="top">
+                <h1>My Profile</h1>
+                <br>
+                <div class="tod">
+                    <label class="center">Profile Image</label>
+                    <br><br>
+                    <p id="para1">
+                    <img src="images\pic.png" [src]="selectedImage"><br></p>
+                    <input type="file" (change)="onFileSelected($event)"><br>
+                </div>
+            </div>
+                <div class="code">
+                    <div class="center">
+                    <div>
+                        <label  for="CustomerId">CustomerId:</label>
+                        <input type="text" [(ngModel)]="customerId">
+                    </div>
+                    <div>
+                    <label for="First Name">First Name:</label>
+                    <input type="text" [(ngModel)]="firstName">
+                    <label for="Last Name">Last Name:</label>
+                    <input type="text" [(ngModel)]="lastName">
+                    </div>
+                    <div>
+                    <label for="Email">Email:</label>
+                    <input type="email" [(ngModel)]="email">
+
+                    <label for="Password">Password:</label>
+                    <input type="password" [(ngModel)]="password">
+                    </div>
+                    <div>
+                        <label>Phone Number:</label>
+                        <input type="text" [(ngModel)]="phoneNumber">
+
+                        <label>Address:</label>
+                        <input type="address" [(ngModel)]="address">
+                    </div>
+                </div>
+                    <div>
+                    <label class="center">Gender:</label>
+                
+                    <input type="radio" name="Gender" value="Male">Male
+                    <input type="radio" id="female" name="Gender" value="Female">Female
+                    <input type="radio" id="others" name="Gender" value="others">others
+
+                </div>
+      <br>
+      <div>
+        <button class="button" (click)="saveProfile()">Save</button>
+        <button class="button" (click)="editProfile()">Edit Profile</button>
+        <button class="button" (click)="deleteProfile()">Delete Profile</button>
+        <button class="button" (click)="cancelProfile()">Cancel</button>
+      </div>
+
+      </div>
+
+      </body>
