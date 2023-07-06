@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<body>
+    <div class="container">
+    <h1>Create Cancellation</h1>
+    <form (submit)="createCancellation()">
+      <label for="reason">Reason for cancellation:</label>
+      <select id="reason" name="reason" [(ngModel)]="newCancellation.reason" required>
+        <option value="personal reason">personal reason/Trip called off</option>
+        <option value="different accomodation">Found a different accomodation option</option>
+        <option value="change of date">change of date</option>
+        <option value="other">None of the above</option>
+      </select>
+    
+      <label for="dateCancelled">Date Cancelled</label>
+      <input type="date" id="dateCancelled" name="dateCancelled" [(ngModel)]="newCancellation.dateCancelled" required>
+    <br>
+      <button type="submit">cancel_booking</button>
+    </form>
+</div>
+    <h1>Cancellations</h1>
+    <div class="table-container">
+    <table class="table">
+        <caption></caption>
+      <tr>
+        <th>ID</th>
+        <th>Date Cancelled</th>
+        <th>Reason</th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let cancellation of cancellations">
+        <td>{{ cancellation.cancellationId }}</td>
+        <td>{{ cancellation.dateCancelled }}</td>
+        <td>{{ cancellation.reason }}</td>
+        <td>
+          <button (click)="updateCancellation(cancellation)">Update</button>
+          <button (click)="deleteCancellation(cancellation)">Delete</button>
+        </td>
+      </tr>
+    </table>
+</div>
+</body>
