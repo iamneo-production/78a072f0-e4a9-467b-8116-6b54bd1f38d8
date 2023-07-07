@@ -1,0 +1,56 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Total Bookings</h2>
+  <div class="search-bar">
+
+    <input type="text" [formControl]= "roomTypeFilter" placeholder="Filter by Booking ID" (input)= "filterRooms()" (focus)= "onSearchFocus()" (blur)= "onSearchBlur()">
+    
+  </div>
+  <div *ngIf= "showContent">
+    <ul *ngFor= "let room of rooms">
+      <li>
+        <h3>Booking Id : {{room.id}}</h3>
+        <h3 >Customer Name : {{room.name}}</h3>
+        <h3 class="room-type">{{ room.type }}</h3>
+        <img *ngIf="room.type.toUpperCase()==='DELUXE'" [src]= "'assets/Deluxe.jpg'" alt="Room Image"> 
+        <img *ngIf="room.type.toUpperCase()==='CLASSIC'" [src]= "'assets/Classic.jpg'" alt="Room Image"> 
+        <img *ngIf="room.type.toUpperCase()==='STANDARD'" [src]= "'assets/Standard.jpg'" alt="Room Image"> 
+        <img *ngIf="room.type.toUpperCase()==='STANDARDDELUXE'" [src]= "'assets/StandardDeluxe.jpg'" alt="Room Image"> 
+        <img *ngIf="room.type.toUpperCase()==='STANDARDKING'" [src]= "'assets/StandardKing.jpg'" alt="Room Image"> 
+        <img *ngIf="room.type.toUpperCase()==='STANDARDQUEEN'" [src]= "'assets/StandardQueen.jpg'" alt="Room Image">
+        <img *ngIf="room.type.toUpperCase()==='SUITES'" [src]= "'assets/Suites.jpg'" alt="Room Image">  
+        <h4 class="room-price">Price : ${{ room.price }}</h4>
+        <p class="room-description">{{ room.description }}</p>
+        <p>check-in date : {{room.check_in_date}}</p>
+        <p>check-out date : {{room.check_out_date}}</p>
+      </li>  
+    </ul>
+  </div>
+  
+  <div *ngIf = "showContent==false">
+    <ul *ngFor= "let room of filteredRooms">
+      <li>
+        <h3>Booking Id : {{room.id}}</h3>
+        <h3 >Customer Name : {{room.name}}</h3>
+        <h3 class="room-type">{{ room.type }}</h3>
+        <img [src]="'assets/' + room.image" alt="Room Image">
+        <h4 class="room-price">Price : ${{ room.price }}</h4>
+        <p class="room-description">{{ room.description }}</p>
+        <p>check-in date : {{room.check_in_date}}</p>
+        <p>check-out date : {{room.check_out_date}}</p>
+      </li>  
+    </ul>
+  </div>
+  
+  
+  
+</body>
+</html>
+
+
+
