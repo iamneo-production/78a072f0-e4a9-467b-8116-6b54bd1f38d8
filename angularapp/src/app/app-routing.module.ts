@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CancellationComponent } from './cancellation/cancellation.component';
 
-const routes: Routes = [{path:"canellation",component:CancellationComponent}];
+const routes: Routes = [{path:'bookings/:bookingId/cancellations',component:CancellationComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
