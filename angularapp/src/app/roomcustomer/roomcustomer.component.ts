@@ -56,7 +56,7 @@ export class RoomcustomerComponent implements OnInit {
       return 'assets/rooms/Suites.jpg';
     }
   
-    return 'assets/images/default.jpg';
+    return 'assets/images/Defaults.jpg';
   }
   updateroom(roomNumber: number)
   {

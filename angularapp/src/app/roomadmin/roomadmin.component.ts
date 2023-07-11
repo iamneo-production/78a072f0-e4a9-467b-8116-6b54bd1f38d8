@@ -92,7 +92,7 @@ export class RoomadminComponent {
       return 'assets/rooms/Suites.jpg';
     }
     // Return a default image URL if the roomType doesn't match any specific cases
-    return 'assets/images/default.jpg';
+    return 'assets/images/Defaultroom.jpg';
   }
 
 }
