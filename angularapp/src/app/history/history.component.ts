@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-history',
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class HistoryComponent {
   public rooms: any
   filteredRooms: any[] = [];
- constructor( private http:HttpClient){
+ constructor( private http:HttpClient,private router:Router){
    this.filteredRooms = this.rooms;
  }
  ngOnInit(){
@@ -20,6 +21,9 @@ export class HistoryComponent {
    response.subscribe((data) =>this.rooms = data);
    //});
  }
+ manageCancellations(bookingId: number) {
+  this.router.navigate(['/bookings', bookingId, 'cancellations']);
+}
  //searchText: FormControl = new FormControl('');
      roomTypeFilter: FormControl = new FormControl('');
    //roomPriceFilter: FormControl = new FormControl('');

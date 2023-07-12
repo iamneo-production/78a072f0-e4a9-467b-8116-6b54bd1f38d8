@@ -26,7 +26,7 @@
         <p class="room-description">{{ room.description }}</p>
         <p>check-in date : {{room.check_in_date}}</p>
         <p>check-out date : {{room.check_out_date}}</p>
-        <button>Cancel Booking</button>
+        <button (click)="manageCancellations(room.id)">Cancel Booking</button>
       </li>  
     </ul>
   </div>
@@ -40,7 +40,7 @@
         <p class="room-description">{{ room.description }}</p>
         <p>check-in date : {{room.check_in_date}}</p>
         <p>check-out date : {{room.check_out_date}}</p>
-        <button>Cancel Booking</button>
+        <button (click)="manageCancellations(room.id)">Cancel Booking</button>
       </li>  
     </ul>
   </div>
