@@ -6,9 +6,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { AdminComponent } from './pages/admin/admin.component';
-import { MailComponent } from './admin/mail/mail.component';
 import { NotificationComponent } from './pages/notification/notification.component';
-
 import { CustomerServiceComponent } from './pages/customer-service/customer-service.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -16,17 +14,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomerService } from './customer.service';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-
-
+import {MatTabsModule} from '@angular/material/tabs';
+import { RoomadminComponent } from './room-service/roomadmin/roomadmin.component';
+import { UpdateroomComponent } from './room-service/updateroom/updateroom.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
-   AppComponent,
-   DashboardComponent,
-   ReportsComponent,
-   CustomerServiceComponent,
-   NotificationComponent,
-   MailComponent,
-   AdminComponent
+    AppComponent,
+    DashboardComponent,
+    ReportsComponent,
+    AdminComponent,
+    NotificationComponent,
+    CustomerServiceComponent,
+    RoomadminComponent,
+    UpdateroomComponent,
+
+   
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,10 @@ import {HttpClientModule} from '@angular/common/http';
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTabsModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

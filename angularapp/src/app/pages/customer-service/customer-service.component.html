@@ -43,10 +43,8 @@
       Invalid Phone Number.
     </div>
   </div>
-
   <button type="submit" [disabled]="bookingForm.invalid" class="btn btn-primary">Book Now</button>
 </form>
-
 </div>
 
 <!--<nav class="nav-bar">
@@ -72,7 +70,7 @@
       <td>{{ booking.email }}</td>
       <td>{{ booking.phoneNumber }}</td>
       <td>
-        <button (click)="deleteBooking(booking.id)" class="del">Delete</button>
+        <button mat-raised-button (click)="deleteBooking(booking.id)" class="del" color="warn">Delete Booking</button>
       </td>
     </tr>
   </tbody>

@@ -5,12 +5,14 @@ import { Component, ElementRef, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'admin-pannel';
   route: any;
+  profilePicturePath: string="../assets/admin-icons.png"
+
 
   constructor(private el:ElementRef){}
-  ngOnInit(): void {
+  ngOnInit(): void {                                                                                                                                                                                                                                                         
       let alldrpdwn =document.querySelectorAll('.dropdow-container');
       console.log(alldrpdwn,'alldrpdwn#')
       alldrpdwn.forEach((item:any)=>{
@@ -52,6 +54,35 @@ export class AppComponent {
       }
     
     }
+
+    toggleMenu:any;
+    //responsivemaincontent
+
+    toggleContent:any;
+    toggleStatus=true;
+    toggle(status:any){
+      if(status===this.toggleStatus){
+        this.toggleMenu ={
+          'display':'none'
+      }
+      this.toggleContent={
+        'margin-left':'25px'
+      }
+      this.toggleStatus = false;
+    }
+    else{
+      this.toggleMenu ={
+        'display':null
+      }
+      this.toggleContent={
+        'margin-left':null
+      }
+      this.toggleStatus=true;
+    }
+  
+    
+  }
+
     logout(){
       localStorage.removeItem('admin');
       this.route.navigate(['/dashboard'])

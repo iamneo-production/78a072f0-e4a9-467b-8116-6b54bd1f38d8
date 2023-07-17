@@ -1,15 +1,47 @@
-<div class="h1">
-    <header>Dashboard</header>
-</div>
-
-<div class="total-card">
-    <div class="monthly-result">Monthly Result</div>
-    <div class="bookings">Bookings</div>
-    <div class="reviews">Reviews
-     
-    </div>
+<div class="container">
+    <div class="row">
         
-   
-</div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Number of Customers</h5>
+              <canvas baseChart
+                      [datasets]="chartData"
+                      [labels]="chartLabels"
+                      [options]="chartOptions"
+                      [type]="chartType">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Number of Bookings</h5>
+              <canvas baseChart
+                      [datasets]="bookingsData"
+                      [labels]="chartLabels"
+                      [options]="chartOptions"
+                      [type]="chartType">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Revenue Owned</h5>
+              <canvas baseChart
+                      [datasets]="revenueData"
+                      [labels]="chartLabels"
+                      [options]="chartOptions"
+                      [type]="chartType">
+              </canvas>
+            </div>
+          </div>
+        </div>
 
-
+      </div>
+    </div> 

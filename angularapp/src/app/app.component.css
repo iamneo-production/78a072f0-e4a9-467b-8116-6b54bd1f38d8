@@ -2,20 +2,15 @@
 /* topnav css*/
 .topnav{
     width:100%;
+    margin-bottom: 20px;
     height: 50px;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 100;
     overflow: hidden;
-    background-color: #0f172b;
+    background-color: #353a40;
     border-bottom: 1px solid rgb(128, 128, 128);
-}
-
-.topnav .mail{
-    margin-top: 15px;
-    padding-left: 850px;
-    line-height: 1;
-   
 }
 
 .topnav a{
@@ -26,13 +21,18 @@
     font-weight: bolder;
     padding: 14px 16px;
 }
+.tgl{
+    font-size: 30px;
+    cursor: pointer;
+    color: #d2d5dd;
+}
 .menu{
     float: right;
     margin-right: 50px;
     margin-top:10px;
     font-size: 30px;
     cursor: pointer;
-    color: #000;
+    color: #d2d5dd;
     display: none;
 }
 
@@ -42,7 +42,7 @@
     position: fixed;
     top: 63px;
     overflow: auto;
-    background-color:#0f172b;
+    background-color:#353a40;
     height: 100%;
     border-right:1px solid rgb(128, 128,128);
     padding: 20px 15px;
@@ -112,9 +112,15 @@ ul>li>a.active{
     margin-top:100px;
     padding:10px 18px;
     transition: margin-left .5s;
+    overflow-y: hidden;
 
 }
-
+.home{
+    width:800px;
+    height:500px;
+    margin-top: -40px;
+    margin-left: 150px;
+}
 
 
 @media screen and (max-width:500px) {
@@ -131,5 +137,8 @@ ul>li>a.active{
     .main-content{
         margin-left: 0px;
     }
-
+    .tgl{
+        display: none;
+    }
+    
 }

@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CustomerService } from 'src/app/customer.service';
 @Component({
   selector: 'app-customer-service',
@@ -12,13 +13,13 @@ export class CustomerServiceComponent implements OnInit {
   bookings: any; 
   customerName:any;
   data:any;
-  constructor(private formBuilder: FormBuilder,private customerService: CustomerService,http:HttpClient) { }
+  constructor(private formBuilder: FormBuilder,private customerService: CustomerService,http:HttpClient, private router:Router) { }
 
   ngOnInit(): void {
     this.intiForm();
-    this.customerService.getAllCustomer().subscribe((response)=>{
-      this.bookings=response;
-    })
+    this.customerService.getAllCustomer().subscribe((data)=>{
+      this.bookings=data;
+    });
   }
   intiForm() {
     this.bookingForm = this.formBuilder.group({
@@ -47,14 +48,14 @@ export class CustomerServiceComponent implements OnInit {
     this.bookingForm.reset();
   }
  
-
   deleteBooking(id:number) {
     this.customerService.deleteBooking(id).subscribe((data)=>{
-      console.log(data);
-      
+     console.log(data);
+    
     });
-    window.location.reload();
+    this.router.navigate(['/customer-service']);
+   window.location.reload();
+   
   }
-
   
 }

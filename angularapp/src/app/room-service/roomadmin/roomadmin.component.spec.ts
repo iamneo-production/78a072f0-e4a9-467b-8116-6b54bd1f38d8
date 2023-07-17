@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MailComponent } from './mail.component';
+import { RoomadminComponent } from './roomadmin.component';
 
-describe('MailComponent', () => {
-  let component: MailComponent;
-  let fixture: ComponentFixture<MailComponent>;
+describe('RoomadminComponent', () => {
+  let component: RoomadminComponent;
+  let fixture: ComponentFixture<RoomadminComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [MailComponent]
+      declarations: [RoomadminComponent]
     });
-    fixture = TestBed.createComponent(MailComponent);
+    fixture = TestBed.createComponent(RoomadminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
