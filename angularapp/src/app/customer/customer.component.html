@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+        
+            <div class="top">
+
+                <h1>My Profile</h1>
+                    <br>
+                    
+                    <div class="tod">
+                      <label class="center">Profile Image</label>
+                      <br><br>
+                      <p id="para1">
+                      <img src="images\pic.png" [src]="selectedImage"><br></p>
+                      <input type="file" (change)="onFileSelected($event)"><br>
+                    </div>
+                </div>
+               
+                    <div class="code">
+                      <div class="center">
+                        <div class="rom">
+                          <h1>Personal Information</h1>
+                          <label  for="CustomerId">CustomerId:</label>
+                         <input class="p" type="text" [(ngModel)]="customerId" required>
+                        
+                        <label for="First Name">First Name:</label>
+                        <input class="p" type="text" [(ngModel)]="firstName" required>
+                        </div>
+                        <div class="rom">
+                        <label for="Last Name">Last Name:</label>
+                        <input class="p" type="text" [(ngModel)]="lastName" required>
+              
+                        <label for="Email">Email:</label>
+                        <input class="p" type="email" [(ngModel)]="email" required>
+                      </div>
+                      <div class="rom">
+                        <label for="Password">Password:</label>
+                        <input class="p" type="password" [(ngModel)]="password" required>
+              
+                        <label>Phone Number:</label>
+                        <input class="p" type="text" [(ngModel)]="phoneNumber" required>
+                        </div>
+                     
+                    <div>
+                    <div>
+                        <label class="center">Gender:</label>
+                      <input  type="radio" name="Gender" value="Male">Male
+                      <input type="radio" id="female" name="Gender" value="Female">Female
+                      <input type="radio" id="others" name="Gender" value="others">others
+              
+                    <div>
+                     
+                      <button class="button" (click)="saveProfile()">Save</button>
+                
+                      <button class="button" (click)="cancelProfile()">Cancel</button>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+              
+                  <div class="code1">
+                  <h1>BillingAddress</h1>
+                
+                  <div class="class">
+                    <div class="rom">
+                      <label for="billingAddress">Billing Address</label>
+                      <textarea class="p" id="billingAddress" name="billingAddress" [(ngModel)]="address"></textarea>
+                    </div>
+                    <div class="rom">
+                      <label for="pincode">Pincode</label>
+                      <input  class="p" type="text" id="pincode" name="pincode" [(ngModel)]="pincode">
+                    </div>
+                    <div class="rom">
+                      <label for="state">State</label>
+                      <select class="p" id="state" name="state"  [(ngModel)]="state">
+                        <option value=" Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value=" Assam">Assam</option>
+                        <option value=" Bihar">Bihar</option>
+                        <option value=" Chhattisgarh">Chhattisgarh</option>
+                        <option value=" Goa">Goa</option>
+                        <option value=" Gujarat">Gujarat</option>
+                        <option value=" Haryana">Haryana</option>
+                        <option value=" Himachal Pradesh">Himachal Pradesh</option>
+                        <option value=" Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value=" Jharkhand">Jharkhand</option>
+                        <option value=" Karnataka">Karnataka</option>
+                        <option value=" Kerala">Kerala</option>
+                        <option value=" Madhya Pradesh">Madhya Pradesh</option>
+                        <option value=" Maharashtra">Maharashtra</option>
+                        <option value=" Manipur">Manipur</option>
+                        <option value=" Meghalaya">Meghalaya</option>
+                        <option value=" Mizoram">Mizoramh</option>
+                        <option value=" Nagaland">Nagaland</option>
+                        <option value=" Odisha">Odisha</option>
+                        <option value=" Punjab">Punjab</option>
+                        <option value=" Rajasthan">Rajasthan</option>
+                        <option value=" Sikkim"> Sikkim</option>
+                        <option value="Tamil Nadu ">Tamil Nadu</option>
+                        <option value=" Telangana">Telangana</option>
+                        <option value=" Tripura">Tripura</option>
+                        <option value=" Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand ">Uttarakhand</option>
+                        <option value=" West Bengal">West Bengal</option>
+                       </select>
+                    </div>
+                    <div>
+                    </div>
+                     
+                      <button class="button" (click)="saveProfile()">Save</button>
+                
+                      <button class="button" (click)="cancelProfile()">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="code2">
+                  <h1>Payment Details</h1>
+                  <form>
+                    <div class="center">
+                      <div class="rom">
+                    <div>
+                      <label for="paymentMethod">Payment Method</label>
+                      <select class="p" id="paymentMethod" name="paymentMethod" [(ngModel)]="paymentMethod">
+                        <option value="">Select Payment Method</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Debit Card">Debit Card</option>
+                        <option value="Net Banking">Net Banking</option>
+                        <option value="UPI">UPI</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label for="cardNumber">Card Number</label>
+                      <input class="p" type="text" id="cardNumber" name="cardNumber" [(ngModel)]="cardNumber">
+                    </div>
+                    <div>
+                      <label for="cardHolderName">Card Holder Name</label>
+                      <input class="p" type="text" id="cardHolderName" name="cardHolderName" [(ngModel)]="cardHolderName">
+                    </div>
+                    <div>
+                      <label for="expiryDate">Expiry Date</label>
+                      <input class="p" type="text" id="expiryDate" name="expiryDate" [(ngModel)]="expiryDate">
+                    </div>
+                    <div>
+                      <label for="cvv">CVV</label>
+                      <input class="p" type="text" id="cvv" name="cvv" [(ngModel)]="cvv">
+                    </div>
+              
+                    <button class="button" (click)="saveProfile()">Save</button>
+                
+                    <button class="button" (click)="cancelProfile()">Cancel</button>
+                  </div>
+                </div>
+              </form>
+              </div>
+            
+            
+       
+
