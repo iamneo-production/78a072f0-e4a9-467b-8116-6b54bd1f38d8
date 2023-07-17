@@ -24,7 +24,6 @@ export class CustomerComponent implements OnInit {
   cardHolderName: string='';
   expiryDate: string='';
   cvv: string='';
-
   
 
   constructor(private customerService:CustomerService) { }
