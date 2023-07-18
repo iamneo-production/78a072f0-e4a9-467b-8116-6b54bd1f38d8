@@ -6,6 +6,26 @@ body {
   align-content: center;
 }
 
+header {
+  background-color: #353a40;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logout-btn {
+  padding: 5px 10px;
+  background-color: #eef0f1;
+  color: #0e0d0d;
+  border: none;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #afb4b9;
+}
+
 /* Cancellations table */
 h2 {
   font-size: 24px;
