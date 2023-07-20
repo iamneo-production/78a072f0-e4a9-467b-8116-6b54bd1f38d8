@@ -19,6 +19,7 @@ import { RoomadminComponent } from './room-service/roomadmin/roomadmin.component
 import { UpdateroomComponent } from './room-service/updateroom/updateroom.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import {MatCardModule} from '@angular/material/card';
     CustomerServiceComponent,
     RoomadminComponent,
     UpdateroomComponent,
+    AdminDashboardComponent,
 
    
   ],
