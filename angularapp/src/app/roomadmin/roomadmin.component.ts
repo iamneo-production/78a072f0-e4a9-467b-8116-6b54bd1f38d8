@@ -14,15 +14,10 @@ export class RoomadminComponent {
   newroom: Room = new Room();
   roomnumber !: number;
 
-  
   constructor(private roomservice:RoomService, private router: Router) { }
 
   ngOnInit(): void {
-      // this.roomservice.getRoomList().subscribe(data => {
-      //   this.rooms = data;
-      // });
-      this.getRooms();
-      
+      this.getRooms();    
   }
 
   getRooms()
@@ -45,7 +40,7 @@ export class RoomadminComponent {
 
   goToAdmin()
   {
-    this.router.navigate(['/rooms/admin']);
+    this.router.navigate(['admin/rooms']);
   }
 
   onSubmit(addform: NgForm)
@@ -56,19 +51,17 @@ export class RoomadminComponent {
     addform.reset();
   }
 
-  updateroom(roomNumber: number)
+  updateroom(roomId: number)
   {
-    console.log(roomNumber);
-    this.router.navigate(['/updateroom',roomNumber]);
-    //this.getRooms();
-    //this.goToAdmin();
+    console.log(roomId);
+    this.router.navigate(['/updateroom',roomId]);
   }
 
-  deleteroom(roomNumber: number)
+  deleteroom(roomId: number)
   {
-    this.roomservice.deleteRoom(roomNumber).subscribe(data =>
+    this.roomservice.deleteRoom(roomId).subscribe(data =>
       {
-        console.log(roomNumber);
+        console.log(roomId);
         alert("Deleted successfully");
         this.getRooms();
         this.goToAdmin();
@@ -85,13 +78,12 @@ export class RoomadminComponent {
     }else if (roomType === 'Deluxe') {
       return 'assets/rooms/Deluxe.jpg';
     }else if (roomType === 'Super Deluxe') {
-      return 'assets/rooms/SuperDeluxe.jpg';
+      return 'assets/rooms/Deluxe.jpg';
     }else if (roomType === 'Classic') {
       return 'assets/rooms/Classic.jpg';
     }else if (roomType === 'Suites') {
       return 'assets/rooms/Suites.jpg';
     }
-    // Return a default image URL if the roomType doesn't match any specific cases
     return 'assets/images/Defaultroom.jpg';
   }
 

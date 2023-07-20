@@ -29,15 +29,14 @@ export class UpdateroomComponent implements OnInit {
   {
     this.roomservice.updateRoom(this.RoomNumber,this.newroom).subscribe(data =>
       {
-        alert("Updated Sucessfully");
+        alert("Updated Successfully");
       },error => console.log(error)
       );
     this.goToAdmin();
-    
   }
 
   goToAdmin()
   {
-    this.router.navigate(['/admin']);
+    this.router.navigate(['admin/rooms']);
   }
 }

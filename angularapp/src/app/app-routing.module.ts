@@ -6,10 +6,10 @@ import { UpdateroomComponent } from './updateroom/updateroom.component';
 
 const routes: Routes = [
   {path:"",component:RoomcustomerComponent},
-  {path:"rooms/admin",component:RoomadminComponent},
-  {path:"rooms/customer",component:RoomcustomerComponent},
+  {path:"admin/rooms",component:RoomadminComponent},
+  {path:"rooms",component:RoomcustomerComponent},
   {path:"updateroom/:id",component:UpdateroomComponent},
-  { path: '', redirectTo: '/hotel-rooms', pathMatch: 'full' },  
+  {path: '', redirectTo: '/hotel-rooms', pathMatch: 'full' },  
 ];
 
 @NgModule({

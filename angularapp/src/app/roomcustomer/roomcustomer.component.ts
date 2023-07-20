@@ -14,7 +14,7 @@ export class RoomcustomerComponent implements OnInit {
   name !: string;
   Bookedroomno !: number;
   roomType!: string;
-  price!: number;
+  pricePerNight!: number;
   selectedRoomType: string = '';
   selectedCategory: string = ''; 
   selectedMaxPrice: number = 0; 
@@ -49,7 +49,7 @@ export class RoomcustomerComponent implements OnInit {
     }else if (roomType === 'Deluxe') {
       return 'assets/rooms/Deluxe.jpg';
     }else if (roomType === 'Super Deluxe') {
-      return 'assets/rooms/SuperDeluxe.jpg';
+      return 'assets/rooms/Deluxe.jpg';
     }else if (roomType === 'Classic') {
       return 'assets/rooms/Classic.jpg';
     }else if (roomType === 'Suites') {
@@ -58,10 +58,10 @@ export class RoomcustomerComponent implements OnInit {
   
     return 'assets/images/Defaults.jpg';
   }
-  updateroom(roomNumber: number)
+  updateroom(roomId: number)
   {
-    console.log(roomNumber);
-    this.router.navigate(['/updateroom',roomNumber]);
+    console.log(roomId);
+    this.router.navigate(['/updateroom',roomId]);
     //this.getRooms();
     //this.goToAdmin();
   }
@@ -73,8 +73,8 @@ export class RoomcustomerComponent implements OnInit {
       this.filteredRooms = this.rooms.filter(room => {
         const matchesRoomType = !this.selectedRoomType || room.roomType === this.selectedRoomType;
         const matchesCategory = !this.selectedCategory || room.category === this.selectedCategory;
-        //const matchesNoOfGuests = !this.selectedNoOfGuests || room.noOfGuests === this.selectedNoOfGuests;
-        const matchesPrice = !this.selectedMaxPrice || (room.price !== undefined && room.price <= this.selectedMaxPrice);
+        //const matchesNoOfGuests = !this.selectedNoOfGuests || room.capacity === this.selectedNoOfGuests;
+        const matchesPrice = !this.selectedMaxPrice || (room.pricePerNight !== undefined && room.pricePerNight <= this.selectedMaxPrice);
         const matchesAvailability = !this.selectedAvailability || (room.availability !== undefined && room.availability.toString() === this.selectedAvailability);
 
         return matchesRoomType && matchesCategory && matchesPrice && matchesAvailability;

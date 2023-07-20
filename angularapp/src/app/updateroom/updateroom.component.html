@@ -1,15 +1,19 @@
+<div class="bg-dark box-shadow">
+  <a class="btn btn-danger logout-button" routerLink="">Logout</a>
+  <br>
+  <h4 class="text-center">Rooms</h4>
+  <br>
+</div>
+<br>
+
 <div class="col-md-5 offset-md-3">
     <h3>UPDATE-ROOM</h3>
     <form (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label>RoomNumber</label>
-        <input type="number" class="form-control" id="RoomNumber" name="RoomNumber" [(ngModel)]="newroom.roomNumber">
+        <input type="number" class="form-control" id="RoomNumber" name="RoomNumber" [(ngModel)]="newroom.roomId">
       </div>
   
-      <!-- <div class="form-group">
-            <label>Category</label>
-            <input type ="text" class ="form-control" id="Category" name ="Category" [(ngModel)] = "newroom.category">
-          </div> -->
   
       <div class="form-group">
         <label>Category</label>
@@ -21,11 +25,6 @@
             <input type="radio" name="Category" value="NON-AC" [(ngModel)]="newroom.category">NON-AC</label>
         </div>
       </div>
-  
-      <!-- <div class="form-group">
-            <label>RoomType</label>
-            <input type ="text" class ="form-control" id="RoomType" name ="RoomType" [(ngModel)] = "newroom.roomType">
-          </div> -->
   
       <div class="form-group">
         <label for="RoomType">RoomType</label>
@@ -41,29 +40,14 @@
       </div>
   
       <div class="form-group">
-        <label>ArrivalDate</label>
-        <input type="date" class="form-control" id="ArrivalDate" name="ArrivalDate" [(ngModel)]="newroom.arrivalDate">
-      </div>
-  
-      <div class="form-group">
-        <label>DepartDate</label>
-        <input type="date" class="form-control" id="DepartDate" name="DepartDate" [(ngModel)]="newroom.departDate">
-      </div>
-  
-      <div class="form-group">
         <label>Noofguests</label>
-        <input type="number" class="form-control" id="Noofguests" name="Noofguests" [(ngModel)]="newroom.noOfGuests">
+        <input type="number" class="form-control" id="Noofguests" name="Noofguests" [(ngModel)]="newroom.capacity">
       </div>
   
       <div class="form-group">
         <label>Price</label>
-        <input type="number" class="form-control" id="Price" name="Price" [(ngModel)]="newroom.price">
+        <input type="number" class="form-control" id="Price" name="Price" [(ngModel)]="newroom.pricePerNight">
       </div>
-  
-      <!-- <div class="form-group">
-            <label>Availability</label>
-            <input type ="number" class ="form-control" id="Availability" name ="Availability" [(ngModel)] = "newroom.availability">
-          </div> -->
   
       <div class="form-group">
         <label for="Availability">Availability</label>
