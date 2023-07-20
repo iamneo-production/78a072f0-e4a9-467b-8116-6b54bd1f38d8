@@ -7,29 +7,29 @@ import { Customer } from './customer';
   providedIn: 'root'
 })
 export class CustomerService {
-  setProfileData(profileData: { profileImage: string | null; firstName: string; lastName: string; email: string; password: string; phoneNumber: string; address: string; gender: string;  pincode: string;
-  state: string ;
-  paymentMethod: string;
-  cardNumber: string;
-  cardHolderName: string;
-  expiryDate: string;
-  cvv: string}) {
+  static getCustomer(id: any, number: any) {
     throw new Error('Method not implemented.');
   }
-  getCustomerData() {
+  getcustomer() {
     throw new Error('Method not implemented.');
   }
+  setCustomerData(customerData: { profileImage: string | null; customerId: string; firstName: string; lastName: string; email: string; password: string; phoneNumber: string; address: string; gender: string; state:string; pincode:string;}) {
+  
+  }
+
   private baseUrl = 'http://localhost:8080/api/v1/customer';
 
   constructor(private httpClient: HttpClient) { }
 
-
+  saveCustomer(formData: any): Observable<any> {
+    return this.httpClient.post(this.baseUrl, formData);
+  }
 
   getCustomer(id: number): Observable<Customer> {
     const url= `${this.baseUrl}/${id}`;
     return this.httpClient.get<Customer>(url);
   }
-  updateCustomer(id: number, profile: Customer): Observable<Customer>{
+  updateCustomer(id: number, customer: Customer): Observable<Customer>{
     const url= `${this.baseUrl}/${id}`;
     return this.httpClient.put<Customer>(url, Customer);
   }
