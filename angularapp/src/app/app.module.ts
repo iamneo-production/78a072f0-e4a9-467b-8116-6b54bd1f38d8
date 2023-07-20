@@ -20,7 +20,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     RoomcustomerComponent,
     RoomadminComponent,
     UpdateroomComponent
-
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
