@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "profile")
+@Table(name = "customer")
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,22 +47,6 @@ public class Customer {
 	@Column(name = "State")
 	private String state;
 	
-	
-	@Column(name = "PaymentMethod")
-	private String paymentMethod;
-	
-	
-	@Column(name = "CardNumber")
-	private String cardNumber;
-	
-	@Column(name = "CardHolderName")
-	private String cardHolderName;
-	
-	@Column(name = "ExpiryDate")
-	private String expiryDate;
-	
-	@Column(name = "cvv")
-	private String cvv;
 
 	public Customer(){
 		
@@ -70,8 +54,7 @@ public class Customer {
 	
 
 	public  Customer( String customerId, String firstName, String lastName, String email, String password,
-			int phoneNumber, String gender, String address, String state, String pincode, String paymentMethod,
-			String cardNumber, String cardHolderName, String expiryDate, String cvv ) {
+			int phoneNumber, String gender, String address, String state, String pincode ) {
 	
 		this.customerId = customerId;
 		this.firstName = firstName;
@@ -83,11 +66,6 @@ public class Customer {
 		this.address = address;
 		this.state = state;
 		this. pincode = pincode;
-		this. paymentMethod = paymentMethod;
-		this. cardNumber = cardNumber;
-		this. cardHolderName = cardHolderName;
-		this. expiryDate = expiryDate;
-		this. cvv= cvv;
 	}
 
 
@@ -182,45 +160,5 @@ public class Customer {
 		this.pincode = pincode;
 	}
 	
-	public String getPaymentMethod() {
-		return this.paymentMethod;
-	}
-
-	public void setPaymentMethod(String paymentMethod) {
-		this.paymentMethod = paymentMethod;
-	}
-	public String getCardNumber() {
-		return this.cardNumber;
-	}
-
-	public void setCardNumber(String cardNumber) {
-		this.cardNumber = cardNumber;
-	}
-	public String getCardHolderName() {
-		return this.cardHolderName;
-	}
-
-	public void setCardHolderName(String cardHolderName) {
-		this.cardHolderName = cardHolderName;
-	}
-	public String getExpiryDate() {
-		return this.expiryDate;
-	}
-
-	public void setExpiryDate(String expiryDate) {
-		this.expiryDate = expiryDate;
-	}
-	public String getcvv() {
-		return this.cvv;
-	}
-
-	public void setcvv(String cvv) {
-		this.cvv = cvv;
-	}
-
-
-
-
-
 }
 

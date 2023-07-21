@@ -58,11 +58,7 @@ public class CustomerController {
     	customerItems.setAddress(customer.getAddress());
     	customerItems.setState(customer.getState());
     	customerItems.setPincode(customer.getPincode());
-    	customerItems.setPaymentMethod(customer.getPaymentMethod());
-    	customerItems.setCardNumber(customer.getCardNumber());
-    	customerItems.setCardHolderName(customer.getCardHolderName());
-    	customerItems.setExpiryDate(customer.getExpiryDate());
-    	customerItems.setcvv(customer.getcvv());
+
     	return ResponseEntity.ok(customerItems);
     }
 
