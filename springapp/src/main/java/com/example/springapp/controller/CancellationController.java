@@ -18,7 +18,7 @@ import com.example.springapp.model.Cancellation;
 import com.example.springapp.service.CancellationService;
 
 @RestController
-@CrossOrigin(origins="http://localhost:8081")
+@CrossOrigin(origins="https://8081-dfabcadabfbffebceaeaadbdbabf.project.examly.io")
 @RequestMapping("/bookings/{bookingId}/cancellations")
 public class CancellationController {
 	private CancellationService cancellationService;
