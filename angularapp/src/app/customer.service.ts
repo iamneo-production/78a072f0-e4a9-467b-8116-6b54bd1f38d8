@@ -17,7 +17,7 @@ export class CustomerService {
   
   }
 
-  private baseUrl = 'http://localhost:8080/api/v1/customer';
+  private baseUrl = 'https://8080-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/api/v1/customer';
 
   constructor(private httpClient: HttpClient) { }
 

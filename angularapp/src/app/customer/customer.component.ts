@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { CustomerService } from '../customer.service';
-import { HttpClient } from '@angular/common/http';
+
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-  profileImage: string | null = null;
+  selectedImage: string| null=null;
    customerId: string='';
     firstName: string='';
     lastName: string='';
@@ -21,9 +21,9 @@ export class CustomerComponent implements OnInit {
     address:string='';
     state:string='';
     pincode:string='';
-  selectedImage: any;
+
   
-    constructor(private customerservice:CustomerService, private http: HttpClient, private route: ActivatedRoute) { }
+    constructor(private customerservice:CustomerService,  private route: ActivatedRoute) { }
   ngOnInit(): void {
  
   }
@@ -36,7 +36,7 @@ export class CustomerComponent implements OnInit {
 
   
     saveProfile() {
-      // Perform form submission logic here
+    
       console.log('Profile submitted!');
       console.log('CustomerId:', this.customerId);
       console.log('First Name:', this.firstName);
@@ -65,10 +65,10 @@ export class CustomerComponent implements OnInit {
       };
   
       this.customerservice.saveCustomer(formData).subscribe(
-        (response: any) => {
+        (response) => {
           console.log('Profile saved successfully!', response);
         },
-        (        error: any) => {
+        (error) => {
           console.error('Error saving profile:', error);
         }
       );
@@ -114,5 +114,4 @@ export class CustomerComponent implements OnInit {
 
 
   }
-
 

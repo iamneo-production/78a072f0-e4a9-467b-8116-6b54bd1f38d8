@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "nagisky")
 public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,7 +41,7 @@ public class Customer {
 	
 	
 	@Column(name = "Pincode")
-	private String pincode;
+	private int pincode;
 	
 	
 	@Column(name = "State")
@@ -54,7 +54,7 @@ public class Customer {
 	
 
 	public  Customer( String customerId, String firstName, String lastName, String email, String password,
-			int phoneNumber, String gender, String address, String state, String pincode ) {
+			int phoneNumber, String gender, String address, String state, int pincode ) {
 	
 		this.customerId = customerId;
 		this.firstName = firstName;
@@ -152,11 +152,11 @@ public class Customer {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public String getPincode() {
+	public int getPincode() {
 		return this.pincode;
 	}
 
-	public void setPincode(String pincode) {
+	public void setPincode(int pincode) {
 		this.pincode = pincode;
 	}
 	

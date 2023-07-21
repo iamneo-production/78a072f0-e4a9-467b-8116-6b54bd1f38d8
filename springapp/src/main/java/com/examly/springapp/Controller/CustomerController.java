@@ -20,7 +20,7 @@ import com.examly.springapp.Model.Customer;
 import com.examly.springapp.Service.CustomerService;
 
 @RestController
-@CrossOrigin(origins= "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/")
+@CrossOrigin(origins= "https://8080-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/api/v1/customer")
 @RequestMapping("/api/v1")
 public class CustomerController {
     private final CustomerService customerService;
