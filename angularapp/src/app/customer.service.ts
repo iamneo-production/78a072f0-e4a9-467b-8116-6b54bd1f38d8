@@ -13,11 +13,11 @@ export class CustomerService {
   getcustomer() {
     throw new Error('Method not implemented.');
   }
-  setCustomerData(customerData: { profileImage: string | null; customerId: string; firstName: string; lastName: string; email: string; password: string; phoneNumber: string; address: string; gender: string; state:string; pincode:string;}) {
+  setCustomerData(customerData: { profileImage: string | null; customerId: number; name: string; email: string; phone: string; }) {
   
   }
 
-  private baseUrl = 'https://8080-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/api/v1/customer';
+  private baseUrl = 'https://8080-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/customers/bookings';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,17 +25,17 @@ export class CustomerService {
     return this.httpClient.post(this.baseUrl, formData);
   }
 
-  getCustomer(id: number): Observable<Customer> {
-    const url= `${this.baseUrl}/${id}`;
-    return this.httpClient.get<Customer>(url);
+  getCustomer(customerId: string): Observable<any> {
+    const url= `${this.baseUrl}/customers/${customerId}/bookings`;
+    return this.httpClient.get<any[]>(url);
   }
-  updateCustomer(id: number, customer: Customer): Observable<Customer>{
-    const url= `${this.baseUrl}/${id}`;
-    return this.httpClient.put<Customer>(url, Customer);
+  updateCustomer(customerId: string, customers: any, bookings: any): Observable<any>{
+    const url= `${this.baseUrl}/customers/${customerId}/bookings`;
+    return this.httpClient.put<any[]>(url, Customer);
   }
-  createCustomer( customer: Customer): Observable<Customer>{
+  createCustomer( customers: any, bookings:any): Observable<any>{
 
-    return this.httpClient.post<Customer>(`${this.baseUrl}`, customer);
+    return this.httpClient.post<Customer>(`${this.baseUrl}`, customers);
   }
   
 

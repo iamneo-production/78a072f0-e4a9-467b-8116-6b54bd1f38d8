@@ -19,9 +19,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.examly.springapp.Model.Customer;
 import com.examly.springapp.Service.CustomerService;
 
+
 @RestController
-@CrossOrigin(origins= "https://8080-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/api/v1/customer")
-@RequestMapping("/api/v1")
+@CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/")
+@RequestMapping("/customers")
 public class CustomerController {
     private final CustomerService customerService;
 
@@ -30,46 +31,39 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping("/customer")
-    public List<Customer> getAllCustomers() {
-        return customerService.getAllCustomers();
+    @GetMapping("/bookings")
+    public ResponseEntity<List<Customer>> getAllCustomers() {
+        return ResponseEntity.ok (this.customerService.getAllCustomers());
     }
 
-    @GetMapping("/customer/{id}")
-    public Customer getCustomer(@PathVariable Long id) {
-        return customerService.getCustomerById(id);
+
+
+    @GetMapping("/{customerId}/bookings")
+    public ResponseEntity<Customer> getCustomer(@PathVariable Integer customerId) {
+        return ResponseEntity.ok(this.customerService.getCustomerById(customerId));
     }
 
-    @PostMapping("/customer")
+    @PostMapping("/bookings")
     public Customer createCustomer(@RequestBody Customer customer) {
         return customerService.createCustomer(customer);
     }
 
-    @PutMapping("/customer/{id}")
-    public ResponseEntity<Customer> updateCustomer(@PathVariable Long customerid,@RequestBody Customer customer){
-    	Customer customerItems = customerService.getCustomerById(customerid);
-    	customerItems.setCustomerId(customer.getCustomerId());
-    	customerItems.setFirstName(customer.getFirstName());
-    	customerItems.setLastName(customer.getLastName());
-    	customerItems.setEmail(customer.getEmail());
-    	customerItems.setPassword(customer.getPassword());
-    	customerItems.setPhoneNumber(customer.getPhoneNumber());
-    	customerItems.setGender(customer.getGender());
-    	customerItems.setAddress(customer.getAddress());
-    	customerItems.setState(customer.getState());
-    	customerItems.setPincode(customer.getPincode());
+    @PutMapping("/{customerId}/bookings")
+    public ResponseEntity<Customer> updateCustomer(@PathVariable Integer customerId, @RequestBody Customer customer) {
+        Customer customerItems = customerService.getCustomerById(customerId);
+        customerItems.setCustomerId(customer.getCustomerId());
+        customerItems.setName(customer.getName());
+        customerItems.setEmail(customer.getEmail());
+        customerItems.setPhone(customer.getPhone());
 
-    	return ResponseEntity.ok(customerItems);
+        return ResponseEntity.ok(customerItems);
     }
 
-    @DeleteMapping("/customer/{id}")
-    public ResponseEntity<Map<String, Boolean>> deleteCustomer(@PathVariable Long customerid){
-
-    	 
-    	  customerService.deleteCustomer(customerid);
-    	  Map<String, Boolean> response = new HashMap<>();
-    	  response.put("deleted",Boolean.TRUE);
-    	  return ResponseEntity.ok(response);
-       
+    @DeleteMapping("/{customerId}/bookings")
+    public ResponseEntity<Map<String, Boolean>> deleteCustomer(@PathVariable Integer customerId) {
+        customerService.deleteCustomer(customerId);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return ResponseEntity.ok(response);
     }
 }

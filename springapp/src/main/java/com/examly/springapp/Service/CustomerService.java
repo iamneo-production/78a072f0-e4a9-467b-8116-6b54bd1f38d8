@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import com.examly.springapp.Model.Customer;
 import com.examly.springapp.Repository.CustomerRepo;
 
+
+
 import java.util.List;
 
 @Service
@@ -25,23 +27,22 @@ public class CustomerService {
         return customerRepo.findAll();
     }
 
-    public Customer getCustomerById(Long id) {
+    public Customer getCustomerById(Integer id) {
         return customerRepo.findById(id).orElse(null);
     }
 
-    public Customer updateCustomer(Long id, Customer customer) {
+
+
+    public Customer updateCustomer(Integer id, Customer customer) {
         if (customerRepo.existsById(id)) {
-            customer.setId(id);
+            customer.setCustomerId(id);
             return customerRepo.save(customer);
         } else {
             return null;
         }
     }
 
-    public void deleteCustomer(Long id) {
+    public void deleteCustomer(Integer id) {
         customerRepo.deleteById(id);
     }
-
-	
 }
-

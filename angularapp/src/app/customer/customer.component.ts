@@ -12,21 +12,15 @@ import { ActivatedRoute } from '@angular/router';
 export class CustomerComponent implements OnInit {
   selectedImage: string| null=null;
    customerId: string='';
-    firstName: string='';
-    lastName: string='';
+    name: string='';
     email: string='';
-    phoneNumber: string='';
-    gender: string='';
-    password: string='';
-    address:string='';
-    state:string='';
-    pincode:string='';
+    phone: string='';
+
 
   
     constructor(private customerservice:CustomerService,  private route: ActivatedRoute) { }
-  ngOnInit(): void {
- 
-  }
+    ngOnInit(): void {
+    }
   
     
     public onFileSelected(event: any): void {
@@ -39,36 +33,23 @@ export class CustomerComponent implements OnInit {
     
       console.log('Profile submitted!');
       console.log('CustomerId:', this.customerId);
-      console.log('First Name:', this.firstName);
-      console.log('Last Name:', this.lastName);
+      console.log('Name:', this.name);
       console.log('Email:', this.email);
-      console.log('Phone Number:', this.phoneNumber);
-      console.log('Gender:', this.gender);
-      console.log('Password:', this.password);
-      console.log('Address:', this.address);
-      console.log('state:', this.state);
-      console.log('pincode:', this.pincode);
+      console.log('Phone:', this.phone);
 
       const formData = {
         customer:this.customerId,
-        firstName: this.firstName,
-        lastName: this.lastName,
+        name: this.name,
         email: this.email,
-        phoneNumber: this.phoneNumber,
-        gender: this.gender,
-        password: this.password,
-        address:this.address,
-        state:this.state,
-        pincode:this.pincode
-  
+        phone: this.phone,
 
       };
   
       this.customerservice.saveCustomer(formData).subscribe(
-        (response) => {
+        (response: any) => {
           console.log('Profile saved successfully!', response);
         },
-        (error) => {
+        (error: any) => {
           console.error('Error saving profile:', error);
         }
       );
@@ -88,28 +69,18 @@ export class CustomerComponent implements OnInit {
     private resetForm() {
       this.selectedImage = null;
       this.customerId='';
-      this.firstName = '';
-      this.lastName = '';
+      this.name = '';
       this.email = '';
-      this.phoneNumber = '';
-      this.gender = '';
-      this.password = '';
-      this.address='';
-      this.state='';
-      this.pincode='';
+      this.phone = '';
+
     }
     private editForm() {
       this.selectedImage = null;
       this.customerId='';
-      this.firstName = '';
-      this.lastName = '';
+      this.name = '';
       this.email = '';
-      this.phoneNumber = '';
-      this.gender = '';
-      this.password = '';
-      this.address='';
-      this.state='';
-      this.pincode='';
+      this.phone = '';
+
     }
 
 
