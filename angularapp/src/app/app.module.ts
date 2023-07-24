@@ -9,10 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    CancellationComponent,
-    RoomcustomerComponent,
-    RoomadminComponent,
-    UpdateroomComponent
   ],
   imports: [
     BrowserModule,
