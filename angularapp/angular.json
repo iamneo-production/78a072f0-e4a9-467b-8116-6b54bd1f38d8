@@ -24,7 +24,16 @@
               "src/favicon.ico",
               "src/assets"
             ],
+<<<<<<< HEAD
             "styles": [
+=======
+
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+
+               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/custom-theme.scss",
+
+>>>>>>> f33740ef39940d9c8a55672afe185f13c71bd61a
               "src/styles.css"
             ],
             "scripts": []
@@ -87,6 +96,12 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
+=======
+
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+
+>>>>>>> f33740ef39940d9c8a55672afe185f13c71bd61a
               "src/styles.css"
             ],
             "scripts": []
@@ -96,6 +111,10 @@
     }
   },
   "cli": {
+<<<<<<< HEAD
     "analytics": "d8c071b3-4854-47f5-aff2-6ede51915ef9"
+=======
+    "analytics": "ecfc2009-1f4c-42d0-8e83-1bba401c0aaa"
+>>>>>>> f33740ef39940d9c8a55672afe185f13c71bd61a
   }
 }
