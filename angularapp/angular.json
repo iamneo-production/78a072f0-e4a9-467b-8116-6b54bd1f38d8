@@ -24,9 +24,12 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
+
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+
                "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/custom-theme.scss",
+
               "src/styles.css"
             ],
             "scripts": []
@@ -89,6 +92,9 @@
               "src/assets"
             ],
             "styles": [
+
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+
               "src/styles.css"
             ],
             "scripts": []
@@ -98,6 +104,6 @@
     }
   },
   "cli": {
-    "analytics": "e1e13816-7171-4538-89ec-757d5a75faf1"
+    "analytics": "ecfc2009-1f4c-42d0-8e83-1bba401c0aaa"
   }
 }

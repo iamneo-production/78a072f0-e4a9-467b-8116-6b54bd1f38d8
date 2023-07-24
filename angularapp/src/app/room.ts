@@ -6,3 +6,4 @@ export class Room {
     pricePerNight?: number;
     availability?: number;;
 }
+
