@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,11 @@ import { RoomadminComponent } from './room-service/roomadmin/roomadmin.component
 import { UpdateroomComponent } from './room-service/updateroom/updateroom.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CancellationComponent } from './cancellation/cancellation.component';
+import { RoomcustomerComponent } from './roomcustomer/roomcustomer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +32,12 @@ import {MatCardModule} from '@angular/material/card';
     ReportsComponent,
     AdminComponent,
     NotificationComponent,
-    CustomerServiceComponent,
-    RoomadminComponent,
+    CustomerServiceComponent;
     UpdateroomComponent,
-
+    CancellationComponent,
+    RoomcustomerComponent,
+    RoomadminComponent,
+    UpdateroomComponent
    
   ],
   imports: [
@@ -41,9 +49,13 @@ import {MatCardModule} from '@angular/material/card';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+     MatButtonModule,
+    MatCardModule,
+    BrowserModule,
+    AppRoutingModule,
+    NoopAnimationsModule,
     MatTabsModule,
     MatButtonModule,
-    MatCardModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

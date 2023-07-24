@@ -7,10 +7,12 @@ import { Room } from './room';
   providedIn: 'root'
 })
 export class RoomService {
-  private baseURL1 = "http://localhost:8080/getrooms"; // getallroom
-  private baseURL2 = "http://localhost:8080/addroom";  //addroom
-  private baseURL3 = "http://localhost:8080/room";  //retriveroomdata
-  private baseURL4 = "http://localhost:8080/updateroom";  //updateroom   
+ 
+  private baseURL1 = "https://8080-fdedbdfabffebceaeaadbdbabf.project.examly.io/getrooms"; // getallroom
+  private baseURL2 = "https://8080-fdedbdfabffebceaeaadbdbabf.project.examly.io/addroom";  //addroom
+  private baseURL3 = "https://8080-fdedbdfabffebceaeaadbdbabf.project.examly.io/room";  //retriveroomdata
+  private baseURL4 = "https://8080-fdedbdfabffebceaeaadbdbabf.project.examly.io/updateroom";  //updateroom   
+
 
   constructor(private httpClient:HttpClient) { }
  
@@ -35,4 +37,5 @@ export class RoomService {
   {
     return this.httpClient.delete(`${this.baseURL3}/${RoomNumber}`);
   }
+
 }
