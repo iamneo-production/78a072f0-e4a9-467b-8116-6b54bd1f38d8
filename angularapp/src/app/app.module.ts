@@ -13,8 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
     RoomcustomerComponent,
     RoomadminComponent,
     UpdateroomComponent
-],
-
+  ],
   imports: [
     BrowserModule,
     FormsModule,
