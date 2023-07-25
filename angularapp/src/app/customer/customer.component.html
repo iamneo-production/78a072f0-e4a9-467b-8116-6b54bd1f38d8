@@ -17,7 +17,7 @@
     <div class="rom">
       <h1>Personal Information</h1>
       <label for="CustomerId">CustomerId:</label>
-      <input class="p" type="text" [value]="customerId" [disabled]="!isEditMode" required>
+      <input class="p" type="text" [(ngModel)]="customerId" [disabled]="!isEditMode" required>
 
       <label for="First Name">First Name:</label>
       <input class="p" type="text" [(ngModel)]="name" [disabled]="!isEditMode" required>
