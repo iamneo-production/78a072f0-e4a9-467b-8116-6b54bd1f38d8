@@ -17,7 +17,7 @@ export class HistoryComponent {
  ngOnInit(){
    //this.x.getdata()
        //.subscribe(data => this.rooms = data)
-  let response = this.http.get("assets/bookingdata.json");
+  let response = this.http.get("http://localhost:8080/bookings");
    response.subscribe((data) =>this.rooms = data);
    //});
  }

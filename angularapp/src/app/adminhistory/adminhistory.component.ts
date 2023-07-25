@@ -14,7 +14,7 @@ constructor(private http:HttpClient){
   this.filteredRooms = this.rooms;
 }
 ngOnInit(){
-  let response = this.http.get("assets/bookingdata.json");
+  let response = this.http.get("http://localhost:8080/bookings");
   response.subscribe((data) =>this.rooms = data);
 }
 //searchText: FormControl = new FormControl('');
