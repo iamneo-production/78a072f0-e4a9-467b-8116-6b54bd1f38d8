@@ -49,7 +49,7 @@ export class RoomcustomerComponent implements OnInit {
     }else if (roomType === 'Deluxe') {
       return 'assets/rooms/Deluxe.jpg';
     }else if (roomType === 'Super Deluxe') {
-      return 'assets/rooms/Deluxe.jpg';
+      return 'assets/rooms/SuperDeluxe.jpg';
     }else if (roomType === 'Classic') {
       return 'assets/rooms/Classic.jpg';
     }else if (roomType === 'Suites') {
