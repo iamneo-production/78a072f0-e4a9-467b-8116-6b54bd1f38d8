@@ -8,9 +8,13 @@ import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
-    CustomerComponent,
-    AppComponent
-   
+
+    AppComponent,
+    CancellationComponent,
+    RoomcustomerComponent,
+    RoomadminComponent,
+    UpdateroomComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
