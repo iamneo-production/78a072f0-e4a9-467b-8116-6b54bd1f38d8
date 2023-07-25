@@ -13,7 +13,7 @@ export class CustomerService {
   getcustomer() {
     throw new Error('Method not implemented.');
   }
-  setCustomerData(customerData: { profileImage: string | null; customerId: number; name: string; email: string; phone: string; }) {
+  setCustomerData(customerData: { profileImage: string | null; customerId: number; name: string; email: string; phone: number; }) {
   
   }
 

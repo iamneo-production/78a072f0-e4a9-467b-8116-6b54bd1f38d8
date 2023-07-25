@@ -15,12 +15,14 @@ export class CustomerComponent implements OnInit {
     name: string='';
     email: string='';
     phone: string='';
+  isEditMode: boolean | undefined;
 
 
   
     constructor(private customerservice:CustomerService,  private route: ActivatedRoute) { }
-    ngOnInit(): void {
-    }
+  ngOnInit(): void {
+ 
+  }
   
     
     public onFileSelected(event: any): void {
@@ -33,39 +35,38 @@ export class CustomerComponent implements OnInit {
     
       console.log('Profile submitted!');
       console.log('CustomerId:', this.customerId);
-      console.log('Name:', this.name);
+      console.log('name:', this.name);
       console.log('Email:', this.email);
       console.log('Phone:', this.phone);
 
+      this.isEditMode = false;
       const formData = {
         customer:this.customerId,
         name: this.name,
         email: this.email,
         phone: this.phone,
+  
 
       };
   
       this.customerservice.saveCustomer(formData).subscribe(
-        (response: any) => {
+        (response) => {
           console.log('Profile saved successfully!', response);
         },
-        (error: any) => {
+        (error) => {
           console.error('Error saving profile:', error);
         }
       );
     }
   
+    editProfile() {
+      this.isEditMode = true;
+    }
+ 
     cancelProfile() {
       console.log('Profile canceled!');
       this.resetForm();
     }
-  
-    editProfile() {
-      
-      console.log('Edit profile!');
-      this.editForm();
-    }
-  
     private resetForm() {
       this.selectedImage = null;
       this.customerId='';
@@ -74,15 +75,6 @@ export class CustomerComponent implements OnInit {
       this.phone = '';
 
     }
-    private editForm() {
-      this.selectedImage = null;
-      this.customerId='';
-      this.name = '';
-      this.email = '';
-      this.phone = '';
-
-    }
-
 
   }
 

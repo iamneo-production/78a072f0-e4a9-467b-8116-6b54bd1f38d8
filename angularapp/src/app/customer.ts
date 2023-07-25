@@ -5,7 +5,7 @@ export class Customer {
     CustomerId?: number;
     name?:string;
     email?: string;
-    phone?: string ;
+    phone?: number ;
 
 
 
