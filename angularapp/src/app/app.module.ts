@@ -10,10 +10,7 @@ import { CustomerComponent } from './customer/customer.component';
   declarations: [
 
     AppComponent,
-    CancellationComponent,
-    RoomcustomerComponent,
-    RoomadminComponent,
-    UpdateroomComponent,
+
     CustomerComponent
   ],
   imports: [
