@@ -8,7 +8,7 @@ import { Room } from './room';
 })
 export class RoomService {
 
-  private baseURL1 = "http://localhost:8080/getrooms"; // getallroom
+  private baseURL1 = "http://localhost:8080/  getrooms"; // getallroom
   private baseURL2 = "http://localhost:8080/addroom";  //addroom
   private baseURL3 = "http://localhost:8080/room";  //retriveroomdata
   private baseURL4 = "http://localhost:8080/updateroom";  //updateroom   
@@ -16,7 +16,7 @@ export class RoomService {
   constructor(private httpClient:HttpClient) { }
  
   getRoomList(): Observable<Room[]>{
-    return this.httpClient.get<Room[]>(`${this.baseURL1}`);
+    return this.httpClient.get<Room[]>(`${this.baseURL1}`); 
   }
 
   createRoom(room:Room):Observable<any>{

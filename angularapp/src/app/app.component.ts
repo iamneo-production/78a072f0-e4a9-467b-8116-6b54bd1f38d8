@@ -8,7 +8,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 export class AppComponent {
   title = 'user-pannel';
   route: any;
-
+  bookingId = 1;// have to change this one from static
   constructor(private el:ElementRef){}
   ngOnInit(): void {
       let alldrpdwn =document.querySelectorAll('.dropdow-container');

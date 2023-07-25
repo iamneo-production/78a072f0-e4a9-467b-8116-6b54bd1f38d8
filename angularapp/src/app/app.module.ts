@@ -10,26 +10,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomerService } from './customer.service';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { UserComponent } from './user/user.component';
+import { CustomerComponent } from './user/user.component';
 import { BookingServiceComponent } from './booking-service/booking-service.component';
 import { BookingFormComponent } from './booking-form/booking-form.component';
 import { PaymentServiceComponent } from './payment-service/payment-service.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
-import { RoomDetailsComponent } from './room-details/room-details.component';
 import { MyBookingComponent } from './my-booking/my-booking.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
+import { RoomcustomerComponent } from './roomcustomer/roomcustomer.component';
 
 
 @NgModule({
   declarations: [
    AppComponent,
-   UserComponent,
+   CustomerComponent,
    BookingServiceComponent,
    BookingFormComponent,
    PaymentServiceComponent,
    CancellationComponent,
-   RoomDetailsComponent,
+   RoomcustomerComponent,
    MyBookingComponent
   ],
   imports: [

@@ -1,1 +1,74 @@
-<p>cancellation works!</p>
+<!DOCTYPE html>
+<header>
+  <button class="logout-btn" [routerLink]="['']">Logout</button>
+</header>
+<body>
+  <div class="container">
+    <h3>Create Cancellation</h3>
+
+    <form (submit)="createCancellation()" class="form">
+      <div class="form-group">
+        <label for="dateCancelled">Date Cancelled:</label>
+        <input type="date" id="dateCancelled" name="dateCancelled" [(ngModel)]="newCancellation.dateCancelled" required>
+      </div>
+      <div class="form-group">
+        <label for="reason">Reason:</label>
+        <select id="reason" name="reason" [(ngModel)]="newCancellation.reason" required>
+            <option value="personal reason">personal reason/Trip called off</option>
+            <option value="different accomodation">Found a different accomodation option</option>
+            <option value="change of date">change of date</option>
+            <option value="other">None of the above</option>
+          </select>
+      </div>
+      <button type="submit" class="submit-btn">Create</button>
+    </form>
+  </div>
+
+<hr>
+<h2>Cancellations</h2>
+
+<div class="table-container" *ngIf="cancellations">
+  <table class="table">
+    <caption></caption>
+    <thead>
+      <tr>
+        <th>Cancellation ID</th>
+        <th>Date Cancelled</th>
+        <th>Reason</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cancellation of cancellations">
+        <td>{{ cancellation.cancellationId }}</td>
+        <td>{{ cancellation.dateCancelled }}</td>
+        <td>{{ cancellation.reason }}</td>
+        <td>
+          <button class="delete-btn" (click)="deleteCancellation(cancellation.cancellationId)">Delete</button>
+          <button class="update-btn"(click)="updateCancellation(cancellation)">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 *ngIf="isUpdateFormVisible">Update Cancellation</h2>
+
+<form *ngIf="isUpdateFormVisible" (submit)="saveCancellation()" class="form">
+  <input type="hidden" [(ngModel)]="selectedCancellation.cancellationId" name="cancellationId">
+  <div class="form-group">
+  <label>Date Cancelled:</label>
+  <input type="date" [(ngModel)]="selectedCancellation.dateCancelled" name="dateCancelled" required>
+  </div>
+  <div class="form-group">
+    <label for="reason">Reason:</label>
+    <select id="reason" name="reason" [(ngModel)]="selectedCancellation.reason" required>
+        <option value="personal reason">personal reason/Trip called off</option>
+        <option value="different accomodation">Found a different accomodation option</option>
+        <option value="change of date">change of date</option>
+        <option value="other">None of the above</option>
+      </select>
+  </div>
+  <button type="submit" class="submit-btn">Save</button>
+</form>
+</body>
