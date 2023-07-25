@@ -1,4 +1,4 @@
-package com.examly.springapp.Controller;
+package com.examly.springapp.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.examly.springapp.Model.Customer;
-import com.examly.springapp.Service.CustomerService;
+import com.examly.springapp.model.Customer;
+import com.examly.springapp.service.CustomerService;
 
 
 @RestController
