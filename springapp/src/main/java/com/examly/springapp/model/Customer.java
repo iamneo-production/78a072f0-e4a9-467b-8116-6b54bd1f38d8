@@ -27,7 +27,7 @@ public class Customer {
 	
 
 	
-	@Column(length = 10)
+	@Column(length = 12)
 	private int phone;
 
 	
