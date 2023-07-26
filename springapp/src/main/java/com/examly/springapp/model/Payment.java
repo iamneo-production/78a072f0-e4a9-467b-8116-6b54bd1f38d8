@@ -1,11 +1,7 @@
-package com.examly.springapp.model;
+package com.customer.Customer.model;
 
 import jakarta.persistence.*;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.GeneratedValue;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,9 +16,6 @@ public class Payment {
     private String paymentStatus;
 
     // Constructors (default and parameterized)
-
-    public Payment() {
-    }
 
     public Payment(int paymentId, double amount, LocalDateTime paymentDateTime, String paymentStatus) {
         this.paymentId = paymentId;

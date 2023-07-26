@@ -1,7 +1,7 @@
-package com.examly.springapp.controller;
+package com.customer.Customer.controller;
 import com.customer.Customer.exception.ResourceNotFoundException;
-import com.examly.springapp.model.Payment;
-import com.examly.springapp.repository.PaymentRepository;
+import com.customer.Customer.model.Payment;
+import com.customer.Customer.repository.PaymentRepository;
 import org.apache.catalina.LifecycleState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +16,11 @@ import java.util.Map;
 @CrossOrigin(origins = "http://localhost:4200")
 
 public class PaymentController {
-       @Autowired
+    @Autowired
     PaymentRepository paymentRepository;
 
 
-       //get payment
+    //get payment
     //http://localhost:8080/api/v1/payment
 
     @GetMapping("/payment")
@@ -52,6 +52,7 @@ public class PaymentController {
     }
 
     //delete payment by id
+    //http://localhost:8080/api/v1/payment/{id}
 
     @DeleteMapping("/payment/{id}")
     public ResponseEntity<Map<String,Boolean>> deletePayment(@PathVariable Long id){
@@ -63,6 +64,6 @@ public class PaymentController {
         return ResponseEntity.ok(response);
     }
 
-    }
+}
 
 

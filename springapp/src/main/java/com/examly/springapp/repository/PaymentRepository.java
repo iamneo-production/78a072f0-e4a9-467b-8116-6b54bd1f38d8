@@ -1,6 +1,6 @@
-package com.examly.springapp.repository;
+package com.customer.Customer.repository;
 
-import com.examly.springapp.model.Payment;
+import com.customer.Customer.model.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
     @Repository
