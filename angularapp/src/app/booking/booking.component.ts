@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-booking',
@@ -9,26 +9,42 @@ import { Component } from '@angular/core';
 export class BookingComponent {
   title = 'booking1';
   user:any={};
+  eid:number=1;
   booking = {
+    name:'',
+    email:'',
+    phone:'',
     roomType: '',
     checkInDate: '',
     checkOutDate: '',
-    guests: 1,
+    guests: '',
     preferences: ''
   };
 
-  roomTypes = ['Standard', 'Deluxe', 'Suite'];
-  numberOfGuests = [1, 2, 3, 4, 5];
+  roomTypes = ['Standard Queen','Standard King', 'Standard','Deluxe','Super Deluxe','Deluxe','Suites'];
+  // numberOfGuests = [1, 2, 3, 4, 5];
 
 
 constructor(private http: HttpClient) { }
 
 onSubmit(): void {
-  const url = 'http://localhost:8080/user';
-  this.http.post(url, this.user)
-    .subscribe(createdUser => {
-      console.log('User created:', createdUser);
-      
-    });
+  console.log(this.booking)
+  const booking = {
+    name: this.user.name,
+    email: this.user.email,
+    phone: this.user.phone,
+    roomType: this.user.roomType,
+    checkInDate: this.user.checkInDate,
+    checkOutDate: this.user.checkOutDate,
+    guests: this.user.guests,
+    preferences: this.user.preferences
+  };
+  console.log(booking);
+  const url = `http://localhost:8080/bookings`;
+  this.http.post(url, this.booking)
+  //   .subscribe(createdUser => {
+  //     console.log('User created:', createdUser);
+  //   });
 }
+
 }

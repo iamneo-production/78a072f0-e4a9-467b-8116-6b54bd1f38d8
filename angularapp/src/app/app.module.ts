@@ -11,7 +11,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatOptionModule} from '@angular/material/core';
 import {MatLineModule} from '@angular/material/core';
+import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
+
+const routes: Routes = [
+  {path:'',component:BookingComponent}
+];
 
 @NgModule({
   declarations: [
@@ -32,6 +37,7 @@ import { HttpClientModule} from '@angular/common/http';
     MatOptionModule,
     MatLineModule,
     HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
