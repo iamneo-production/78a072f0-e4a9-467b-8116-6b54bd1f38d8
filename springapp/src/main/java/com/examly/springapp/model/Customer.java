@@ -1,8 +1,8 @@
-package com.customer.Customer.model;
+package com.examly.springapp.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "customer")

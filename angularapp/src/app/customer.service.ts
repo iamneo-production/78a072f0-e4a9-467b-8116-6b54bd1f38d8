@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CustomerService {
 
-  baseURL='http://localhost:8080/api/v1/customer';
-  apiURL='http://localhost:8080/api/v1/customer/{id}';
+  baseURL='https://8081-aeadcaeeecbffebcfbfbfaeedd.project.examly.io/api/v1/customer';
+  apiURL='https://8081-aeadcaeeecbffebcfbfbfaeedd.project.examly.io/api/v1/customer/{id}';
   constructor(private http:HttpClient){}
   getAllCustomer(){
     return this.http.get(`${this.baseURL}`);
@@ -21,6 +21,6 @@ export class CustomerService {
     return this.http.delete(`${this.baseURL}/${id}`);
   }
   getChartInfo(){
-    return this.http.get(`${this.this.baseURL}`);
+    return this.http.get(`${this.baseURL}`);
   }
 }

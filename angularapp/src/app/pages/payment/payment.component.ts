@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { PaymentService } from 'src/app/payment.service';
 
 
 @Component({
@@ -11,10 +12,13 @@ import { Router } from '@angular/router';
 export class PaymentComponent implements OnInit {
   paymentForm!:FormGroup;
   data:any;
-  constructor(private route:Router, private formBuilder:FormBuilder){}
+  pays!:any;
+  constructor(private route:Router, private formBuilder:FormBuilder,private paymentService:PaymentService){}
   ngOnInit(){
     this.initForm();
-
+    this.paymentService.getAllPayment().subscribe((data=>{
+      this.pays=data;
+    }))
   }
 
 

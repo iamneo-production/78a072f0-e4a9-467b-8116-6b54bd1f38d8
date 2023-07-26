@@ -25,3 +25,21 @@
   </div>
 
   
+  <table>
+    <thead>
+      <tr>
+        <th>Payment ID</th>
+        <th>Amount</th>
+        <th>Payment Date Time</th>
+        <th>Payment Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pay of pays;let i = index">
+        <td>{{ pay.id }}</td>
+        <td>{{ pay.amount }}</td>
+        <td>{{ pay.paymentDateTime }}</td>
+        <td>{{ pay.paymentStatus}}</td>
+      </tr>
+    </tbody>
+  </table>

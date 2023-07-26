@@ -1,7 +1,7 @@
-package com.customer.Customer.controller;
-import com.customer.Customer.exception.ResourceNotFoundException;
-import com.customer.Customer.model.Payment;
-import com.customer.Customer.repository.PaymentRepository;
+package com.examly.springapp.controller;
+import com.examly.springapp.exception.ResourceNotFoundException;
+import com.examly.springapp.model.Payment;
+import com.examly.springapp.repository.PaymentRepository;
 import org.apache.catalina.LifecycleState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

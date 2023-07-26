@@ -1,8 +1,8 @@
-package com.customer.Customer.controller;
+package com.examly.springapp.controller;
 
-import com.customer.Customer.exception.ResourceNotFoundException;
-import com.customer.Customer.model.Room;
-import com.customer.Customer.repository.Roomrepository;
+import com.examly.springapp.exception.ResourceNotFoundException;
+import com.examly.springapp.model.Room;
+import com.examly.springapp.repository.Roomrepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

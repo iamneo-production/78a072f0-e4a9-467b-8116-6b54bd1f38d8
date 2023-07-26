@@ -1,6 +1,6 @@
-package com.customer.Customer.repository;
+package com.examly.springapp.repository;
 
-import com.customer.Customer.model.Customer;
+import com.examly.springapp.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

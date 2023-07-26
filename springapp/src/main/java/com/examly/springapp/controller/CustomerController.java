@@ -1,8 +1,8 @@
-package com.customer.Customer.controller;
+package main.java.com.examly.springapp.controller;
 
-import com.customer.Customer.exception.ResourceNotFoundException;
-import com.customer.Customer.model.Customer;
-import com.customer.Customer.repository.CustomerRepository;
+import com.examly.springapp.exception.ResourceNotFoundException;
+import com.examly.springapp.model.Customer;
+import com.examly.springapp.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://8081-aeadcaeeecbffebcfbfbfaeedd.project.examly.io/")
 
 public class CustomerController {
     @Autowired
@@ -73,3 +73,4 @@ public class CustomerController {
     }
 
 }
+

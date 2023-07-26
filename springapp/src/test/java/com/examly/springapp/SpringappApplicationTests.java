@@ -81,5 +81,6 @@ class SpringappApplicationTests {
 		mockMvc.perform(MockMvcRequestBuilders.delete("/bookings/2/payments/1").accept(MediaType.APPLICATION_JSON))
 				.andDo(print()).andExpect(status().isOk()).andReturn();
 	}
-}
 
+
+}

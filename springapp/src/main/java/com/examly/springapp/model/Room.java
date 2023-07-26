@@ -1,13 +1,13 @@
-package com.customer.Customer.model;
+package com.examly.springapp.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
-import jakarta.persistence.GeneratedValue;
+import javax.persistence.GeneratedValue;
 
 @Entity
 @Table(name = "roominfo")

@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class PaymentService {
   private payments: any[] = [];
 
-  baseURL='http://localhost:8080/api/v1/payment';
+  baseURL='https://8081-aeadcaeeecbffebcfbfbfaeedd.project.examly.io/api/v1/payment';
     constructor(private http:HttpClient) { }
   getAllPayment(){
     return this.http.get(`${this.baseURL}`);
