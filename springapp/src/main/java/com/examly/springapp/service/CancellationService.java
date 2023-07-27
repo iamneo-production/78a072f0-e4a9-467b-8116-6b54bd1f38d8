@@ -1,4 +1,4 @@
-package com.example.springapp.service;
+package com.examly.springapp.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,10 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.example.springapp.model.Booking;
-import com.example.springapp.model.Cancellation;
-import com.example.springapp.repository.BookingRepo;
-import com.example.springapp.repository.CancellationRepo;
+import com.examly.springapp.model.Booking;
+import com.examly.springapp.model.Cancellation;
+import com.examly.springapp.repository.BookingRepo;
+import com.examly.springapp.repository.CancellationRepo;
 
 @Service
 public class CancellationService {
@@ -53,7 +53,7 @@ public class CancellationService {
         Optional<Booking> optionalBooking = bookingRepository.findById(bookingId);
         if (optionalBooking.isPresent()) {
             Booking booking = optionalBooking.get();
-            return cancellationRepository.findAllByBooking(booking);
+            return cancellationRepository.findByBooking(booking);
         } else {
         	throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }

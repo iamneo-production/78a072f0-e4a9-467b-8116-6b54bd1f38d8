@@ -1,4 +1,4 @@
-package com.example.springapp.controller;
+package com.examly.springapp.controller;
 
 import java.util.List;
 
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.springapp.model.Cancellation;
-import com.example.springapp.service.CancellationService;
+import com.examly.springapp.model.Cancellation;
+import com.examly.springapp.service.CancellationService;
 
 @RestController
-@CrossOrigin(origins="https://8081-dfabcadabfbffebceaeaadbdbabf.project.examly.io")
+@CrossOrigin(origins="https://8081-dfabcadabfbffebcfbfbfaeedd.project.examly.io")
 @RequestMapping("/bookings/{bookingId}/cancellations")
 public class CancellationController {
 	private CancellationService cancellationService;
