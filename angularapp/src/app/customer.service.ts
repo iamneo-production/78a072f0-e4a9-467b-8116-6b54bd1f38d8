@@ -13,11 +13,11 @@ export class CustomerService {
   getcustomer() {
     throw new Error('Method not implemented.');
   }
-  setCustomerData(customerData: { profileImage: string | null; customerId: number; name: string; email: string; phone: string; }) {
+  setCustomerData(customerData: { profileImage: string | null; customerId: number; name: string; email: string; phone: number; }) {
   
   }
 
-  private baseUrl = 'https://8080-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/customers/bookings';
+  private baseUrl = 'https://8080-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/customers';
 
   constructor(private httpClient: HttpClient) { }
 

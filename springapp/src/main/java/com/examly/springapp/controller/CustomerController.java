@@ -22,7 +22,7 @@ import com.examly.springapp.service.CustomerService;
 
 @RestController
 @CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/")
-@RequestMapping("/customers")
+@RequestMapping("/api/v1")
 public class CustomerController {
     private final CustomerService customerService;
 
@@ -31,24 +31,24 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping("/bookings")
+    @GetMapping("/customer")
     public ResponseEntity<List<Customer>> getAllCustomers() {
         return ResponseEntity.ok (this.customerService.getAllCustomers());
     }
 
 
 
-    @GetMapping("/{customerId}/bookings")
+    @GetMapping("/{customerId}")
     public ResponseEntity<Customer> getCustomer(@PathVariable Integer customerId) {
         return ResponseEntity.ok(this.customerService.getCustomerById(customerId));
     }
 
-    @PostMapping("/bookings")
+    @PostMapping("/customers")
     public Customer createCustomer(@RequestBody Customer customer) {
         return customerService.createCustomer(customer);
     }
 
-    @PutMapping("/{customerId}/bookings")
+    @PutMapping("/{customerId}")
     public ResponseEntity<Customer> updateCustomer(@PathVariable Integer customerId, @RequestBody Customer customer) {
         Customer customerItems = customerService.getCustomerById(customerId);
         customerItems.setCustomerId(customer.getCustomerId());
@@ -59,7 +59,7 @@ public class CustomerController {
         return ResponseEntity.ok(customerItems);
     }
 
-    @DeleteMapping("/{customerId}/bookings")
+    @DeleteMapping("/{customerId}")
     public ResponseEntity<Map<String, Boolean>> deleteCustomer(@PathVariable Integer customerId) {
         customerService.deleteCustomer(customerId);
         Map<String, Boolean> response = new HashMap<>();
