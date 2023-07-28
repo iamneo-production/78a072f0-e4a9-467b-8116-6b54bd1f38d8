@@ -9,7 +9,7 @@ import { HttpClient} from '@angular/common/http';
 export class BookingComponent {
   title = 'booking1';
   user:any={};
-  eid:number=1;
+  id:number=1;
   booking = {
     name:'',
     email:'',
@@ -41,7 +41,7 @@ onSubmit(): void {
   };
   console.log(booking);
   const url = `http://localhost:8080/bookings`;
-  this.http.post(url, this.booking)
+  this.http.post(url,booking)
   //   .subscribe(createdUser => {
   //     console.log('User created:', createdUser);
   //   });

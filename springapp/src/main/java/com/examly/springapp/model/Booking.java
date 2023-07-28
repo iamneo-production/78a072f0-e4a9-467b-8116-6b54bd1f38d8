@@ -1,8 +1,10 @@
-package com.examly.springapp.model;
+package main.java.com.examly.springapp.model;
 
 import java.util.Date;
 
+// import java.time.LocalDate;
 import jakarta.persistence.*;
+// import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity

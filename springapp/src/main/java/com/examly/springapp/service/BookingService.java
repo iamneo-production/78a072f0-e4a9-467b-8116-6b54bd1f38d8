@@ -1,4 +1,4 @@
-package com.examly.springapp.service;
+package main.java.com.examly.springapp.service;
 
 
 import org.springframework.stereotype.Service;
@@ -24,7 +24,7 @@ public class BookingService {
     public Booking getBookingById(int bookingId) {
         return bookingRepo.findById(bookingId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid booking Id:" + bookingId));
-        // return bookingRepo.get(bookingId);
+       
     }
 
     public Booking createBooking(Booking booking) {
@@ -44,13 +44,12 @@ public class BookingService {
         booking.setCustomer(updatedBooking.getCustomer());
 
         return bookingRepo.save(booking);
-        // bookingRepo.put(bookingId, updatedBooking);
-        // return updatedBooking;
+
     }
 
     public void deleteBooking(int bookingId) {
         bookingRepo.deleteById(bookingId);
-        // bookingRepo.remove(bookingId);
+       
     }
 
 }

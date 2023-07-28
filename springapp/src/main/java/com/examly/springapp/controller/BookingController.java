@@ -1,4 +1,4 @@
-package com.examly.springapp.controller;
+package main.java.com.examly.springapp.controller;
 
 import org.springframework.web.bind.annotation.*;
 import com.booking.bookingapi.model.Booking;
