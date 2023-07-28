@@ -17,7 +17,7 @@ export class CustomerService {
   
   }
 
-  private baseUrl = 'https://8080-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/customers/bookings';
+  private baseUrl = 'https://8080-eccfdafeaeefbffebceaeaadbdbabf.project.examly.io/customers/bookings';
 
   constructor(private httpClient: HttpClient) { }
 

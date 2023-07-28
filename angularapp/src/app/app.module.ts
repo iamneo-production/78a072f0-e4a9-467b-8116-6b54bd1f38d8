@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CustomerComponent } from './user/user.component';
 import { BookingServiceComponent } from './booking-service/booking-service.component';
-import { BookingFormComponent } from './booking-form/booking-form.component';
+import { BookingComponent } from './booking-form/booking-form.component';
 import { PaymentServiceComponent } from './payment-service/payment-service.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
 import { MyBookingComponent } from './my-booking/my-booking.component';
@@ -26,7 +26,7 @@ import { RoomcustomerComponent } from './roomcustomer/roomcustomer.component';
    AppComponent,
    CustomerComponent,
    BookingServiceComponent,
-   BookingFormComponent,
+   BookingComponent,
    PaymentServiceComponent,
    CancellationComponent,
    RoomcustomerComponent,
