@@ -10,7 +10,8 @@ import { UpdateroomComponent } from './updateroom/updateroom.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomerComponent } from './customer/customer.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
-
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CancellationComponent } from './cancellation/cancellation.component';
     HttpClientModule,
     FormsModule,
     NoopAnimationsModule,
-    
+    MatTabsModule,
+    MatButtonModule,
 ],
   providers: [],
   bootstrap: [AppComponent]
