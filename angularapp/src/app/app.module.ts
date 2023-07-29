@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -8,40 +7,28 @@ import { AppComponent } from './app.component';
 import { RoomcustomerComponent } from './roomcustomer/roomcustomer.component';
 import { RoomadminComponent } from './roomadmin/roomadmin.component';
 import { UpdateroomComponent } from './updateroom/updateroom.component';
-
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatButtonModule } from '@angular/material/button';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerComponent } from './customer/customer.component';
 
-const routes: Routes = [
-  {path:"",component:RoomcustomerComponent},
-  {path:"roomadmin",component:RoomadminComponent},
-  {path:"roomcustomer",component:RoomcustomerComponent},
-  {path:"updateroom",component:UpdateroomComponent} 
-];
+
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-
-    CustomerComponent
-=======
+    CustomerComponent,
     RoomcustomerComponent,
     RoomadminComponent,
-    UpdateroomComponent
->>>>>>> 49367fab3908e26efce2493fb4e6590a422e15ef
+    UpdateroomComponent,
+
   ],
   imports: [
-    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     NoopAnimationsModule,
-    MatTabsModule,
-    MatButtonModule,
-  ],
+    
+],
   providers: [],
   bootstrap: [AppComponent]
 })

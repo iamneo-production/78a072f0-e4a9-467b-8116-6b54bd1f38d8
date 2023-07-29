@@ -20,6 +20,7 @@ export class RoomcustomerComponent implements OnInit {
   selectedMaxPrice: number = 0; 
   selectedAvailability: string = ''; 
   filteredRooms: Room[] = [];
+selectedTab: any;
 
   constructor(private roomservice: RoomService, private router: Router, private route: ActivatedRoute) { }
 
