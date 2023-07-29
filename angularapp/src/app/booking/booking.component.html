@@ -1,0 +1,69 @@
+  <div class="total-crd">
+    <div class="booking-form">
+      <div class="booking">
+        <h2>Booking Form</h2>
+      </div>
+      <form (ngSubmit)="onSubmit(value)" #bookingForm="ngForm" class="form-grid">
+        <div class="left-column">
+          <br>
+          <div class="name">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="user.name" required>
+          </div>
+          <br>
+  
+          <div class="email">
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
+          </div>
+          <br>
+  
+          <div class="phone">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" [(ngModel)]="user.phone" required>
+          </div>
+          <br>
+  
+          <div class="roomType">
+            <label for="roomType">Room Type:</label>
+            <select id="roomType" name="roomType" [(ngModel)]="user.roomType" required>
+              <option value="" disabled>Select Room Type</option>
+              <option *ngFor="let type of roomTypes" [value]="type">{{ type }}</option>
+            </select>
+          </div>
+          <br>
+         
+        
+  
+        <div class="right-column">
+          <br>
+          <div class="Dates">
+            <label for="checkInDate">Check-in Date:</label>
+            <input type="date" id="checkInDate" name="checkInDate" [(ngModel)]="user.checkInDate" required>
+          </div>
+          <br>
+  
+          <div class="Dates2">
+            <label for="checkOutDate">Check-out Date:</label>
+            <input type="date" id="checkOutDate" name="checkOutDate" [(ngModel)]="user.checkOutDate" required>
+          </div>
+          <br>
+  
+          <div class="Guests">
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" [(ngModel)]="user.guests" required>
+          </div>
+          <br>
+  
+          <div class="Preferences">
+            <label for="preferences">Additional Preferences:</label>
+            <textarea id="preferences" name="preferences" [(ngModel)]="user.preferences"></textarea>
+          </div>
+          <br>
+          <button class="btn btn-primary" type="submit" routerLink="/user-dashboard/payment">Book Now</button>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

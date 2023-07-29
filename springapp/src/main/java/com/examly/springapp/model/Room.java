@@ -1,114 +1,73 @@
 package com.examly.springapp.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.time.LocalDate;
 import javax.persistence.GeneratedValue;
-
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
+import java.util.List;
 @Entity
-@Table(name = "roominfo")
 public class Room {
-
     @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long roomNumber;
-    @Column(name = "category")
-    private String category;
-    @Column(name = "roomType")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int roomId;
     private String roomType;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    @Column(name = "arrivalDate")
-    private LocalDate arrivalDate;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    @Column(name = "departDate")
-    private LocalDate departDate;
-    @Column(name = "noOfGuests")
-    private int noOfGuests;
-    @Column(name = "price")
-    private double price;
-    @Column(name = "availability")
-    private int availability;
-
+    private int capacity;
+    private boolean isAvailable;
+    private double pricePerNight;
+    @OneToMany(mappedBy="customer")
+    private List<Booking> bookings;
 
 
     public Room() {
-        this.roomNumber = roomNumber;
-        this.category = category;
+        // Default constructor
+    }
+
+    public Room(int roomId, String roomType, int capacity, boolean isAvailable, double pricePerNight) {
+        this.roomId = roomId;
         this.roomType = roomType;
-        this.arrivalDate = arrivalDate;
-        this.departDate = departDate;
-        this.noOfGuests = noOfGuests;
-        this.price = price;
-        this.availability = availability;
+        this.capacity = capacity;
+        this.isAvailable = isAvailable;
+        this.pricePerNight = pricePerNight;
     }
 
-
-    public long getRoomNumber() {
-        return this.roomNumber;
+    public int getRoomId() {
+        return roomId;
     }
 
-    public void setRoomNumber(long roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-
-    public String getCategory() {
-        return this.category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
+    public void setRoomId(int roomId) {
+        this.roomId = roomId;
     }
 
     public String getRoomType() {
-        return this.roomType;
+        return roomType;
     }
 
     public void setRoomType(String roomType) {
         this.roomType = roomType;
     }
 
-    public LocalDate getArrivalDate() {
-        return this.arrivalDate;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setArrivalDate(LocalDate arrivalDate) {
-        this.arrivalDate = arrivalDate;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
-    public LocalDate getDepartDate() {
-        return this.departDate;
+    public boolean isAvailable() {
+        return isAvailable;
     }
 
-    public void setDepartDate(LocalDate departDate) {
-        this.departDate = departDate;
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 
-    public int getNoOfGuests() {
-        return this.noOfGuests;
+    public double getPricePerNight() {
+        return pricePerNight;
     }
 
-    public void setNoOfGuests(int noOfGuests) {
-        this.noOfGuests = noOfGuests;
+    public void setPricePerNight(double pricePerNight) {
+        this.pricePerNight = pricePerNight;
     }
-
-    public double getPrice() {
-        return this.price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public int getAvailability() {
-        return this.availability;
-    }
-
-    public void setAvailability(int availability) {
-        this.availability = availability;
-    }
-
 }

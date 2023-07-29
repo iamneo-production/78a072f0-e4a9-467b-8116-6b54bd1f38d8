@@ -1,47 +1,40 @@
 package com.examly.springapp.model;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
-@Table(name = "customer")
-@JsonIgnoreProperties(value = {"handler","hibernateLazyInitializer","FieldHandler"})
 public class Customer {
-
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-        @Column(name = "name")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int customerId;
     private String name;
-    @Column(name = "checkIn")
-    private String checkIn;
-    @Column(name = "checkOut")
-    private String checkOut;
-    @Column(name = "email")
     private String email;
-    @Column(name = "phoneNumber")
-    private String phoneNumber;
+    private String phone;
+    @OneToMany(mappedBy="customer")
+    private List<Booking> bookings;
 
-    public  Customer(){
-
+    public Customer() {
+        // Default constructor
     }
-    public Customer(long id, String name, String checkIn, String checkOut, String email, String phoneNumber) {
-        super();
-        this.id = id;
+
+    public Customer(int customerId, String name, String email, String phone) {
+        this.customerId = customerId;
         this.name = name;
-        this.checkIn = checkIn;
-        this.checkOut = checkOut;
         this.email = email;
-        this.phoneNumber = phoneNumber;
+        this.phone = phone;
     }
 
-    public long getId() {
-        return id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public String getName() {
@@ -52,22 +45,6 @@ public class Customer {
         this.name = name;
     }
 
-    public String getCheckIn() {
-        return checkIn;
-    }
-
-    public void setCheckIn(String checkIn) {
-        this.checkIn = checkIn;
-    }
-
-    public String getCheckOut() {
-        return checkOut;
-    }
-
-    public void setCheckOut(String checkOut) {
-        this.checkOut = checkOut;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -76,11 +53,11 @@ public class Customer {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

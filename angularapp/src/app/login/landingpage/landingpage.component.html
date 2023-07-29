@@ -1,0 +1,366 @@
+<header>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <i class="fas fa-h-square mr-2"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-buildings" viewBox="0 0 16 16">
+                    <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022ZM6 8.694 1 10.36V15h5V8.694ZM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15Z"/>
+                    <path d="M2 11h1v1H2v-1Zm2 0h1v1H4v-1Zm-2 2h1v1H2v-1Zm2 0h1v1H4v-1Zm4-4h1v1H8V9Zm2 0h1v1h-1V9Zm-2 2h1v1H8v-1Zm2 0h1v1h-1v-1Zm2-2h1v1h-1V9Zm0 2h1v1h-1v-1ZM8 7h1v1H8V7Zm2 0h1v1h-1V7Zm2 0h1v1h-1V7ZM8 5h1v1H8V5Zm2 0h1v1h-1V5Zm2 0h1v1h-1V5Zm0-2h1v1h-1V3Z"/>
+                </svg>
+                  <strong>ACE BOOKING</strong>
+            </a>
+            
+            <li>
+                <ul class="dropdow-container">
+                    <li><a class="text-white" routerLink="/login"> Login </a> <br></li>
+                    <li><a class="text-white" routerLink="/register"> Sign Up </a><br></li>
+                    <li> <a class="text-white" routerLink="/adminlogin"> Admin Login </a></li>
+                </ul>
+              </li>
+        </div>
+        </div>
+
+    <div class="bg-dark collapse" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h3 class="text-white">Add more  -  Create new  -  Enjoy a lot</h3>
+                    <h4 class="text-muted">Experience Happiness - Start with a Booking!</h4>
+                </div>
+            </div>
+        </div>
+    </div>    
+</header>
+
+<main>
+
+    <section class="jumbotron text-center">
+        <div class="container pt-lg-5 pl-5 px-5">
+            <h1 class="display-3">A brand new hotel beyond ordinary</h1>
+            <p class="lead text-muted">Book your summer holidays with us now.</p>
+            <p>
+                <a routerLink="/register" class="btn btn-success my-2" data-toggle="modal" data-target=".sign-in-to-book-modal">Book now<i class="fas fa-angle-double-right ml-1"></i></a>
+            </p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">Pricing</h1>
+            <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
+        </div>
+    </div>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                           <h5 class="my-0 font-weight-normal">Deluxe Room</h5>
+                        </div>
+                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="./assets/deluxe.jpg" data-holder-rendered="true">
+                        <div class="card-body">
+                            <p class="card-text">The ultimate sanctuary to recharge the senses, the beautifully-appointed 24sqm Deluxe Room exudes sheer sophistication and elegance. Located on the higher floors, each Deluxe Room is characterised by elevated ceilings and full length bay windows, transforming your living space into an atmospheric abode.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target=".sign-in-to-book-modal">
+                                        Book
+                                    </button>
+                                </div>
+                                <small class="text-muted">$250 / night</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                            <h5 class="my-0 font-weight-normal">Double Room</h5>
+                        </div>
+                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./assets/double.jpg" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                        <div class="card-body">
+                            <p class="card-text">The standard twin room is equipped with two single beds to house two people. An enticing set of top notch facilities to the optimum security level, a fully air conditioned twin room remains the perfect choice for your needs. Book hotel rooms with us and enjoy your trip with full fervor.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target=".sign-in-to-book-modal">
+                                    Book
+                                </button>
+                                <small class="text-muted">$180 / night</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                            <h5 class="my-0 font-weight-normal">Single Room</h5>
+                        </div>
+                        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="./assets/single.jpg" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;">
+                        <div class="card-body">
+                            <p class="card-text">A modestly sized single room with en suite bathroom with shower and/or bathtub, a hairdryer and complimentary toiletries. Amenities include free WiFi, a telephone, a minibar, and a flat-screen TV with a variety of channels and films.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-success" data-toggle="modal" data-target=".sign-in-to-book-modal">
+                                    Book
+                                </button>
+                                <small class="text-muted">$130 / night</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade book-now-modal-lg" tabindex="-1" role="dialog" aria-labelledby="bookNowModalLarge" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reservation form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body" id="reservationModalBody">
+                        <form role="form" autocomplete="off" method="post" id="multiStepRsvnForm">
+                            <div class="rsvnTab">
+                                    <input type="number" name="cid" hidden>
+                                <div class="form-group row">
+                                    <label for="startDate" class="col-sm-3 col-form-label">Check-in
+                                        <span class="red-asterisk"> *</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                            </div>
+                                            <input type="date" class="form-control"
+                                                   name="startDate" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="endDate" class="col-sm-3 col-form-label">Check-out
+                                        <span class="red-asterisk"> *</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupPrepend">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                            </div>
+                                            <input type="date" class="form-control"  name="endDate" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center">
+                                    <label class="col-sm-3 col-form-label" for="roomType">Room type
+                                        <span class="red-asterisk"> *</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <select required class="custom-select mr-sm-2"  name="roomType">
+                                            <option>Deluxe room</option>
+                                            <option>Double room</option>
+                                            <option>Single room</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center">
+                                    <label class="col-sm-3 col-form-label" for="roomRequirement">Room requirements</label>
+                                    <div class="col-sm-9">
+                                        <select class="custom-select mr-sm-2"  name="roomRequirement">
+                                            <option value="no preference" selected>No preference</option>
+                                            <option value="non smoking">Non smoking</option>
+                                            <option value="smoking">Smoking</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center">
+                                    <label class="col-sm-3 col-form-label" for="adults">Adults
+                                        <span class="red-asterisk"> *</span>
+                                    </label>
+                                    <div class="col-sm-9">
+                                        <select required class="custom-select mr-sm-2"  name="adults">
+                                            <option selected value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center">
+                                    <label class="col-sm-3 col-form-label" for="children">Children</label>
+                                    <div class="col-sm-9">
+                                        <select class="custom-select mr-sm-2"  name="children">
+                                            <option selected value="0">-</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center">
+                                    <label class="col-sm-3 col-form-label" for="specialRequests">Special requirements</label>
+                                    <div class="col-sm-9">
+                                        <textarea rows="3" maxlength="500"  name="specialRequests" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center">
+                                    <button type="button" class="btn btn-info" style="margin-left: 0.8em;" data-container="body" data-toggle="popover"
+                                            data-placement="right" data-content="Check-in time starts at 3 PM. If a late check-in is planned, please contact our support department.">
+                                        Check-in policies
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="rsvnTab">
+                                <div class="form-group row align-items-center">
+                                    <label class="col-sm-3 col-form-label font-weight-bold" for="bookedDate">Booked Date</label>
+                                    <div class="col-sm-9 bookedDateTxt">
+                                        July 13, 2023
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center">
+                                    <label class="col-sm-3 col-form-label font-weight-bold" for="roomPrice">Room Price</label>
+                                    <div class="col-sm-9 roomPriceTxt">235.75</div>
+                                </div>
+                                <div class="form-group row align-items-center">
+                                    <label class="col-sm-3 col-form-label font-weight-bold" for="numNights"><span class="numNightsTxt">3</span> nights </label>
+                                    <div class="col-sm-9">
+                                        $<span class="roomPricePerNightTxt">69.63</span> avg. / night
+                                    </div>
+                                    <label class="col-sm-3 col-form-label font-weight-bold" for="numNights">From - to</label>
+                                    <div class="col-sm-9 fromToTxt">
+                                        Mon. July 4 to Wed. July 6
+                                    </div>
+                                    <label class="col-sm-3 col-form-label font-weight-bold">Taxes </label>
+                                    <div class="col-sm-9">
+                                        $<span class="taxesTxt">0</span>
+                                    </div>
+                                    <label class="col-sm-3 col-form-label font-weight-bold">Total </label>
+                                    <div class="col-sm-9">
+                                        $<span class="totalTxt">0.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="text-align:center;margin-top:40px;">
+                                <span class="step"></span>
+                                <span class="step"></span>
+                            </div>
+
+                        </form>
+                        <div style="overflow:auto;">
+                            <div style="float:right;">
+                                <button type="button" class="btn btn-success" id="rsvnPrevBtn" onclick="rsvnNextPrev(-1)">Previous</button>
+                                <button type="button" class="btn btn-success" id="rsvnNextBtn" onclick="rsvnNextPrev(1)" readySubmit="false">Next</button>
+                            </div>
+                        </div>
+                        <p>Booking is reserved for customers.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal sign-in-to-book-modal" tabindex="-1" role="dialog" aria-labelledby="signInToBookModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Sign in required</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>You have to <a href="sign-in.php">sign in</a> in order to reserve a room.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="myProfileModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card border-0">
+                        <div class="card-body p-0">
+                            <form class="form" role="form" autocomplete="off" id="update-profile-form" method="post">
+                                <input type="number" id="customerId" hidden
+                                       name="customerId" >
+                                <div class="form-group">
+                                    <label for="updateFullName">Full Name</label>
+                                    <input type="text" class="form-control" id="updateFullName"
+                                           name="updateFullName" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="updatePhoneNumber">Phone Number</label>
+                                    <input type="text" class="form-control" id="updatePhoneNumber"
+                                           name="updatePhoneNumber">
+                                </div>
+                                <div class="form-group">
+                                    <label for="updateEmail">Email</label>
+                                    <input type="email" class="form-control" id="updateEmail"
+                                           name="updateEmail"  readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="updatePassword">New Password</label>
+                                    <input type="password" class="form-control" id="updatePassword"
+                                           name="updatePassword"
+                                           title="At least 4 characters with letters and numbers">
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary btn-md float-right"
+                                           name="updateProfileSubmitBtn" value="Update">
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<div class="footer-dark">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web design</a></li>
+                        <li><a href="#">Development</a></li>
+                        <li><a href="#">Hosting</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">Company</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>Company Name</h3>
+                    <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                </div>
+                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+            </div>
+            <p class="copyright">Company Name © 2023</p>
+        </div>
+    </footer>
+</div>
+<router-outlet></router-outlet>

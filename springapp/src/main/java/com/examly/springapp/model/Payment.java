@@ -1,21 +1,30 @@
 package com.examly.springapp.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-import java.time.LocalDateTime;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+import java.time.*;
 @Entity
-@Table (name = "payment")
 public class Payment {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int paymentId;
     private double amount;
     private LocalDateTime paymentDateTime;
     private String paymentStatus;
+    @ManyToOne
+    @JoinColumn(name="booking_id")
+    private Booking booking;
 
-    // Constructors (default and parameterized)
+    public Payment() {
+        // Default constructor
+    }
 
     public Payment(int paymentId, double amount, LocalDateTime paymentDateTime, String paymentStatus) {
         this.paymentId = paymentId;
@@ -55,6 +64,4 @@ public class Payment {
     public void setPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
     }
-
-
 }
