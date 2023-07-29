@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RoomcustomerComponent } from './roomcustomer/roomcustomer.component';
 import { RoomadminComponent } from './roomadmin/roomadmin.component';
@@ -12,6 +11,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
