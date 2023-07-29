@@ -6,6 +6,8 @@ export class Room {
     departDate   ?:Date;
     noOfGuests   ?:number;
     price        ?:number;
-    availability ?:number;;
+    availability ?:number;capacity: any;
+pricePerNight: any;
+;
  }
  
