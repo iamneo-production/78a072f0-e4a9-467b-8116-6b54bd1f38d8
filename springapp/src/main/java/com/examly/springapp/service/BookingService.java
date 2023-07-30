@@ -4,9 +4,10 @@ package main.java.com.examly.springapp.service;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.booking.bookingapi.model.Booking;
 
-import com.booking.bookingapi.repository.BookingRepo;
+
+import com.examly.springapp.model.Booking;
+import com.examly.springapp.repository.BookingRepo;
 
 import java.util.List;
 
@@ -44,12 +45,12 @@ public class BookingService {
         booking.setCustomer(updatedBooking.getCustomer());
 
         return bookingRepo.save(booking);
-
+        
     }
 
     public void deleteBooking(int bookingId) {
         bookingRepo.deleteById(bookingId);
-       
+        
     }
 
 }

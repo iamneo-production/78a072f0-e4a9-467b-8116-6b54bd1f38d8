@@ -9,7 +9,7 @@ import { HttpClient} from '@angular/common/http';
 export class BookingComponent {
   title = 'booking1';
   user:any={};
-  id:number=1;
+  eid:number=1;
   booking = {
     name:'',
     email:'',
@@ -22,7 +22,7 @@ export class BookingComponent {
   };
 
   roomTypes = ['Standard Queen','Standard King', 'Standard','Deluxe','Super Deluxe','Deluxe','Suites'];
-  // numberOfGuests = [1, 2, 3, 4, 5];
+
 
 
 constructor(private http: HttpClient) { }
@@ -40,11 +40,11 @@ onSubmit(): void {
     preferences: this.user.preferences
   };
   console.log(booking);
-  const url = `http://localhost:8080/bookings`;
+  const url = `https://8080-addcfefcbbffebceaeaadbdbabf.project.examly.io`;
   this.http.post(url,booking)
-  //   .subscribe(createdUser => {
-  //     console.log('User created:', createdUser);
-  //   });
+     .subscribe(createdUser => {
+     console.log('User created:', createdUser);
+       });
 }
 
 }

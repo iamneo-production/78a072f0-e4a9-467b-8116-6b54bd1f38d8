@@ -1,8 +1,20 @@
 package main.java.com.examly.springapp.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import org.springframework.web.bind.annotation.*;
-import com.booking.bookingapi.model.Booking;
-import com.booking.bookingapi.service.BookingService;
+import com.examly.springapp.model.Booking;
+import com.examly.springapp.service.BookingService;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +22,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins="https://8081-addcfefcbbffebceaeaadbdbabf.project.examly.io")
 @RequestMapping("/bookings")
 public class BookingController {
     // Add your controller methods here
