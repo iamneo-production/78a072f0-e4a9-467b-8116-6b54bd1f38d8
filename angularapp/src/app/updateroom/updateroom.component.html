@@ -1,0 +1,62 @@
+<div class="bg-dark box-shadow">
+    <a class="btn btn-danger logout-button" routerLink="">Logout</a>
+    <br>
+    <h4 class="text-center">Rooms</h4>
+    <br>
+  </div>
+  <br>
+  
+  <div class="col-md-5 offset-md-3">
+      <h3>UPDATE-ROOM</h3>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>RoomNumber</label>
+          <input type="number" class="form-control" id="RoomNumber" name="RoomNumber" [(ngModel)]="newroom.roomId">
+        </div>
+    
+    
+        <div class="form-group">
+          <label>Category</label>
+          <div class="form-control">
+            <label class="radio-inline">
+              <input type="radio" name="Category" value="AC" [(ngModel)]="newroom.category">AC</label>
+            <br>
+            <label class="radio-inline">
+              <input type="radio" name="Category" value="NON-AC" [(ngModel)]="newroom.category">NON-AC</label>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="RoomType">RoomType</label>
+          <select id="RoomType" name="RoomType" class="form-control" [(ngModel)]="newroom.roomType">
+            <option value="Standard Queen">Standard Queen</option>
+            <option value="Standard King">Standard King</option>
+            <option value="Standard">Standard</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Super Deluxe">Super Deluxe</option>
+            <option value="Classic">Classic</option>
+            <option value="Suites">Suites</option>
+          </select>
+        </div>
+    
+        <div class="form-group">
+          <label>Noofguests</label>
+          <input type="number" class="form-control" id="Noofguests" name="Noofguests" [(ngModel)]="newroom.capacity">
+        </div>
+    
+        <div class="form-group">
+          <label>Price</label>
+          <input type="number" class="form-control" id="Price" name="Price" [(ngModel)]="newroom.pricePerNight">
+        </div>
+    
+        <div class="form-group">
+          <label for="Availability">Availability</label>
+          <select id="Availability" name="Availability" class="form-control" [(ngModel)]="newroom.availability">
+            <option value=1>YES</option>
+            <option value=0>NO</option>
+          </select>
+        </div>
+        <br>
+        <button class="btn btn-success" type="submit">Submit</button>
+      </form>
+    </div>
