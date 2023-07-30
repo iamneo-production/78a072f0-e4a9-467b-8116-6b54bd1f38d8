@@ -12,49 +12,47 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(" /bookings/{bookingId}/payments")
-@CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/")
+@RequestMapping(" /booking/payment")
+@CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io")
 
 public class PaymentController {
     @Autowired
     PaymentRepository paymentRepository;
 
 
-    @GetMapping("/payments")
-    public List<Payment> displayPayment(){return paymentRepository.findAll();}
-
+    @GetMapping("/bookings/{bookingId}/payments")
+    public List<Payment> displayPayment(@PathVariable Long bookingId) 
+    {return paymentRepository.findAll();}
+    
 
   
-    @PostMapping("/payments")
-    public Payment addPayment(@RequestBody Payment pay){
+    @PostMapping("/bookings/{bookingId}/payments")
+    public Payment addPayment(@PathVariable Long bookingId, @RequestBody Payment pay) {
         return paymentRepository.save(pay);
     }
 
 
-    @PutMapping("/payments/{paymentId}")
-    public ResponseEntity<Payment> updatepaymentById(@PathVariable Long id,@RequestBody Payment payment) {
-        Payment getPay=paymentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Customer not exist with id :" + id));
+    @PutMapping("/bookings/{bookingId}/payments/{paymentId}")
+    public ResponseEntity<Payment> updatepaymentById(@PathVariable Long bookingId, @PathVariable Long paymentId, @RequestBody Payment payment) {
+        Payment getPay = paymentRepository.findById(bookingId).orElseThrow(() -> new ResourceNotFoundException("Customer not exist with id: " + bookingId));
         getPay.setPaymentId(payment.getPaymentId());
         getPay.setAmount(payment.getAmount());
         getPay.setPaymentDateTime(payment.getPaymentDateTime());
         getPay.setPaymentStatus(payment.getPaymentStatus());
-
-        Payment updatePay =paymentRepository.save(getPay);
+    
+        Payment updatePay = paymentRepository.save(getPay);
         return ResponseEntity.ok(updatePay);
     }
-
-
-
-    @DeleteMapping("/payments/{paymentId}")
-    public ResponseEntity<Map<String,Boolean>> deletePayment(@PathVariable Long id){
-        Payment payment=paymentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
-
+    
+    @DeleteMapping("/bookings/{bookingId}/payments/{paymentId}")
+    public ResponseEntity<Map<String,Boolean>> deletePayment(@PathVariable Long bookingId, @PathVariable Long paymentId) {
+        Payment payment = paymentRepository.findById(paymentId).orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id: " + paymentId));
+    
         paymentRepository.delete(payment);
-        Map<String, Boolean> response =new HashMap<>();
-        response.put("deleted",Boolean.TRUE);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
-
 }
 
 

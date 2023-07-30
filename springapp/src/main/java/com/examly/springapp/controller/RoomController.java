@@ -1,8 +1,8 @@
 package com.examly.springapp.controller;
+
 import com.examly.springapp.exception.ResourceNotFoundException;
-import com.examly.springapp.model.Payment;
-import com.examly.springapp.repository.PaymentRepository;
-import org.apache.catalina.LifecycleState;
+import com.examly.springapp.model.Room;
+import com.examly.springapp.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,49 +12,46 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(" /bookings/{bookingId}/payments")
-@CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/")
+@CrossOrigin(origins = "https://8081-fdedbdfabffebceaeaadbdbabf.project.examly.io")
+@RequestMapping
+public class RoomController {
 
-public class PaymentController {
     @Autowired
-    PaymentRepository paymentRepository;
+    private RoomService roomService;
 
-
-    @GetMapping("/payments")
-    public List<Payment> displayPayment(){return paymentRepository.findAll();}
-
-
-  
-    @PostMapping("/payments")
-    public Payment addPayment(@RequestBody Payment pay){
-        return paymentRepository.save(pay);
+    @GetMapping("/getrooms")
+    public List<Room> getAllRooms() {
+        return roomService.getAllRooms();
     }
 
-
-    @PutMapping("/payments/{paymentId}")
-    public ResponseEntity<Payment> updatepaymentById(@PathVariable Long id,@RequestBody Payment payment) {
-        Payment getPay=paymentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Customer not exist with id :" + id));
-        getPay.setPaymentId(payment.getPaymentId());
-        getPay.setAmount(payment.getAmount());
-        getPay.setPaymentDateTime(payment.getPaymentDateTime());
-        getPay.setPaymentStatus(payment.getPaymentStatus());
-
-        Payment updatePay =paymentRepository.save(getPay);
-        return ResponseEntity.ok(updatePay);
+    @PostMapping("/addroom")
+    public Room createRoom(@RequestBody Room room) {
+        return roomService.createRoom(room);
     }
 
+    @GetMapping("/room/{roomId}")
+    public ResponseEntity<Room> getRoomById(@PathVariable long roomId) {
+        Room room = roomService.getRoomById(roomId);
+        return ResponseEntity.ok(room);
+    }
 
+    @PutMapping("/updateroom/{roomId}")
+    public ResponseEntity<Room> updateRoom(@PathVariable long roomId, @RequestBody Room roomDetails) {
+        Room updatedRoom = roomService.updateRoom(roomId, roomDetails);
+        return ResponseEntity.ok(updatedRoom);
+    }
 
-    @DeleteMapping("/payments/{paymentId}")
-    public ResponseEntity<Map<String,Boolean>> deletePayment(@PathVariable Long id){
-        Payment payment=paymentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
-
-        paymentRepository.delete(payment);
-        Map<String, Boolean> response =new HashMap<>();
-        response.put("deleted",Boolean.TRUE);
+    @DeleteMapping("/room/{roomId}")
+    public ResponseEntity<Map<String, Boolean>> deleteRoom(@PathVariable Long roomId) {
+        roomService.deleteRoom(roomId);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
 
+    @PostMapping("/bookedroom/{roomId}")
+    public ResponseEntity<Room> bookedRoom(@PathVariable long roomId, @RequestBody int newAvailability) {
+        Room updatedRoom = roomService.bookedRoom(roomId, newAvailability);
+        return ResponseEntity.ok(updatedRoom);
+    }
 }
-
-
