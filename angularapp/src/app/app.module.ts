@@ -12,12 +12,16 @@ import { UpdateroomComponent } from './updateroom/updateroom.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BookingComponent } from './booking/booking.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 const routes: Routes = [
   {path:"",component:RoomcustomerComponent},
   {path:"roomadmin",component:RoomadminComponent},
   {path:"roomcustomer",component:RoomcustomerComponent},
-  {path:"updateroom",component:UpdateroomComponent} 
+  {path:"updateroom",component:UpdateroomComponent},
+  {path:"booking",component:BookingComponent},
+  {path:"landingpage",component:LandingpageComponent}
 ];
 
 @NgModule({
@@ -25,7 +29,9 @@ const routes: Routes = [
     AppComponent,
     RoomcustomerComponent,
     RoomadminComponent,
-    UpdateroomComponent
+    UpdateroomComponent,
+    BookingComponent,
+    LandingpageComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

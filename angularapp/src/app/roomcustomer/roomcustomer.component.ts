@@ -24,11 +24,7 @@ export class RoomcustomerComponent implements OnInit {
   constructor(private roomservice: RoomService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
-    this.username = this.route.snapshot.params['username'];
     this.getRooms();
-
-
   }
 
 
