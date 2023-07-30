@@ -59,7 +59,7 @@
             <p class="card-text">Capacity of guest: {{ room.capacity }}</p>
             <p class="card-text">Price: {{ room.pricePerNight }}</p>
             <p class="card-text">Availability: {{ room.availability === 1 ? 'YES' : 'NO' }}</p>
-            <button class="btn btn-warning" *ngIf="room.availability === 1">Book Room</button>
+            <button class="btn btn-warning" routerLink="/booking" *ngIf="room.availability === 1">Book Room</button>
             <h6 class="text-danger font-Times New Roman" *ngIf="room.availability === 0">Room Booked..!</h6>
           </div>
         </div>
