@@ -9,7 +9,7 @@ import { HttpClient} from '@angular/common/http';
 export class BookingComponent {
   title = 'booking1';
   user:any={};
-  eid:number=1;
+  id:number=1;
   booking = {
     name:'',
     email:'',
@@ -22,7 +22,6 @@ export class BookingComponent {
   };
 
   roomTypes = ['Standard Queen','Standard King', 'Standard','Deluxe','Super Deluxe','Deluxe','Suites'];
-
 
 
 constructor(private http: HttpClient) { }
