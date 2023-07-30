@@ -22,7 +22,7 @@ import com.examly.springapp.service.CustomerService;
 
 @RestController
 @CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/")
-@RequestMapping("/api/v1")
+@RequestMapping()
 public class CustomerController {
     private final CustomerService customerService;
 

@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { BookingService } from '../booking.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking',
@@ -24,8 +26,7 @@ export class BookingComponent {
   roomTypes = ['Standard Queen','Standard King', 'Standard','Deluxe','Super Deluxe','Deluxe','Suites'];
   // numberOfGuests = [1, 2, 3, 4, 5];
 
-
-constructor(private http: HttpClient) { }
+constructor(private http: HttpClient, private bookingservice:BookingService, private router:Router) { }
 
 onSubmit(): void {
   console.log(this.booking)
@@ -40,7 +41,7 @@ onSubmit(): void {
     preferences: this.user.preferences
   };
   console.log(booking);
-  const url = `http://localhost:8080/bookings`;
+  const url = `https://8080-fdedbdfabffebceaeaadbdbabf.project.examly.io/bookings`;
   this.http.post(url,booking)
   //   .subscribe(createdUser => {
   //     console.log('User created:', createdUser);

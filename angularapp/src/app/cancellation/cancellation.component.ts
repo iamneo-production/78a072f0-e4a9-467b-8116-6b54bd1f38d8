@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CancellationService } from '../cancellation.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class CancellationComponent implements OnInit{
   selectedCancellation: any = {};
   isUpdateFormVisible: boolean = false;
 
-  constructor(private cancellationService: CancellationService, private route: ActivatedRoute) { }
+  constructor(private cancellationService: CancellationService, private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {

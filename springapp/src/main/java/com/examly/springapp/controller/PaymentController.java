@@ -1,7 +1,7 @@
-package com.customer.Customer.controller;
-import com.customer.Customer.exception.ResourceNotFoundException;
-import com.customer.Customer.model.Payment;
-import com.customer.Customer.repository.PaymentRepository;
+package com.examly.springapp.controller;
+import com.examly.springapp.exception.ResourceNotFoundException;
+import com.examly.springapp.model.Payment;
+import com.examly.springapp.repository.PaymentRepository;
 import org.apache.catalina.LifecycleState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,34 +12,26 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1")
-@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping(" /bookings/{bookingId}/payments")
+@CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/")
 
 public class PaymentController {
     @Autowired
     PaymentRepository paymentRepository;
 
 
-    //get payment
-    //http://localhost:8080/api/v1/payment
-
-    @GetMapping("/payment")
+    @GetMapping("/payments")
     public List<Payment> displayPayment(){return paymentRepository.findAll();}
 
 
-    // save payment
-    //http://localhost:8080/api/v1/payment
-
-    @PostMapping("/payment")
+  
+    @PostMapping("/payments")
     public Payment addPayment(@RequestBody Payment pay){
         return paymentRepository.save(pay);
     }
 
 
-    //get payment by id
-    //http://localhost:8080/api/v1/payment/1
-
-    @PutMapping("/payment/{id}")
+    @PutMapping("/payments/{paymentId}")
     public ResponseEntity<Payment> updatepaymentById(@PathVariable Long id,@RequestBody Payment payment) {
         Payment getPay=paymentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Customer not exist with id :" + id));
         getPay.setPaymentId(payment.getPaymentId());
@@ -51,10 +43,9 @@ public class PaymentController {
         return ResponseEntity.ok(updatePay);
     }
 
-    //delete payment by id
-    //http://localhost:8080/api/v1/payment/{id}
 
-    @DeleteMapping("/payment/{id}")
+
+    @DeleteMapping("/payments/{paymentId}")
     public ResponseEntity<Map<String,Boolean>> deletePayment(@PathVariable Long id){
         Payment payment=paymentRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee not exist with id :" + id));
 

@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { CustomerService } from '../customer.service';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +19,7 @@ export class CustomerComponent implements OnInit {
 
 
   
-    constructor(private customerservice:CustomerService,  private route: ActivatedRoute) { }
+    constructor(private customerservice:CustomerService,  private route: ActivatedRoute, private router:Router) { }
   ngOnInit(): void {
  
   }

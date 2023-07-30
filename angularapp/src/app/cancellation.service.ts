@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CancellationService {
-  private baseUrl = 'https://8080-dfabcadabfbffebceaeaadbdbabf.project.examly.io';
+  private baseUrl = 'https://8080-dfabcadabfbffebceaeaadbdbabf.project.examly.io/cancellation';
 
   constructor(private httpclient: HttpClient) { }
 

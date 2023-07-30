@@ -1,12 +1,12 @@
-package main.java.com.examly.springapp.service;
+package com.examly.springapp.service;
 
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.booking.bookingapi.model.Booking;
+import com.examly.springapp.model.Booking;
 
-import com.booking.bookingapi.repository.BookingRepo;
+import com.examly.springapp.repository.BookingRepo;
 
 import java.util.List;
 

@@ -1,10 +1,13 @@
-package main.java.com.examly.springapp.model;
+package com.examly.springapp.model;
 
 import java.util.Date;
 
-// import java.time.LocalDate;
-import jakarta.persistence.*;
-// import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.ManyToOne;
 
 
 @Entity
