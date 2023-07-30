@@ -47,31 +47,31 @@ export class CustomerProfileComponent {
 
      };
  
-     this.customerservice.saveCustomer(formData).subscribe(
-       (response) => {
-         console.log('Profile saved successfully!', response);
-       },
-       (error) => {
-         console.error('Error saving profile:', error);
-       }
-     );
-   }
+  //    this.customerservice.saveCustomer(formData).subscribe(
+  //      (response) => {
+  //        console.log('Profile saved successfully!', response);
+  //      },
+  //      (error) => {
+  //        console.error('Error saving profile:', error);
+  //      }
+  //    );
+  //  }
  
-   editProfile() {
-     this.isEditMode = true;
-   }
+  //  editProfile() {
+  //    this.isEditMode = true;
+  //  }
 
-   cancelProfile() {
-     console.log('Profile canceled!');
-     this.resetForm();
-   }
-   private resetForm() {
-     this.selectedImage = null;
-     this.customerId='';
-     this.name = '';
-     this.email = '';
-     this.phone = '';
+  //  cancelProfile() {
+  //    console.log('Profile canceled!');
+  //    this.resetForm();
+  //  }
+  //  private resetForm() {
+  //    this.selectedImage = null;
+  //    this.customerId='';
+  //    this.name = '';
+  //    this.email = '';
+  //    this.phone = '';
 
-   }
+  //  }
 
-}
+}}

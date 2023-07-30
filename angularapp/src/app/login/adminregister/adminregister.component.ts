@@ -23,6 +23,7 @@ export class AdminregisterComponent implements OnInit {
   onSubmit(){
 
       this.loading=true;
+      
     this.auth.adminRegister(this.formdata.name,this.formdata.email,this.formdata.password).subscribe((data) =>{
         console.log(data)
     })  

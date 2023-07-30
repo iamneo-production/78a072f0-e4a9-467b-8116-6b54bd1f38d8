@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CancellationService {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = "https://8080-aeadcaeeecbffebcfbfbfaeedd.project.examly.io/";
 
   constructor(private httpclient: HttpClient) { }
 

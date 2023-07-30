@@ -3,13 +3,14 @@ package com.examly.springapp.controller;
 import org.springframework.web.bind.annotation.*;
 import com.examly.springapp.model.Booking;
 import com.examly.springapp.service.BookingService;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins="https://8081-aeadcaeeecbffebcfbfbfaeedd.project.examly.io/")
 @RequestMapping("/bookings")
 public class BookingController {
     // Add your controller methods here

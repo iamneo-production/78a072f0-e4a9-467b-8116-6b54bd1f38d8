@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  data:any
   formdata = {email:"",password:""};
   submit=false;
   loading=false;
@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     this.loading=true;
     //call login service
+     this.auth.storeToken(this.data.idToken);
     this.auth.login(this.formdata.email,this.formdata.password)
     .subscribe({
         next:data=>{
@@ -30,6 +31,11 @@ export class LoginComponent implements OnInit {
             
         },
         error:data=>{
+            if (data.error.error.message=="INVALID_PASSWORD" || data.error.error.message=="INVALID_EMAIL") {
+                this.errorMessage = "Invalid Credentials!";
+            } else{
+                this.errorMessage = "Unknown error when logging into this account!";
+            }
         }
     }).add(()=>{
         this.loading =false;

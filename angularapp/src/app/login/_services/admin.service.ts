@@ -6,6 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdminService {
+  register(name: string, email: string, password: string) {
+    throw new Error('Method not implemented.');
+  }
+  storeToken(idToken: string) {
+    throw new Error('Method not implemented.');
+  }
   private baseUrl = 'http://localhost:8080'; // Adjust the URL to match your backend server address
   isAuthenticated: boolean | undefined;
 
