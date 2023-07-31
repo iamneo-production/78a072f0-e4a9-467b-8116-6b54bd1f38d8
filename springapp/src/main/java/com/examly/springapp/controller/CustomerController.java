@@ -22,7 +22,7 @@ import com.examly.springapp.service.CustomerService;
 
 @RestController
 @CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/")
-@RequestMapping()
+@RequestMapping("/api/v1")
 public class CustomerController {
     private final CustomerService customerService;
 
@@ -31,14 +31,14 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping("/customer")
+    @GetMapping("/customers")
     public ResponseEntity<List<Customer>> getAllCustomers() {
         return ResponseEntity.ok (this.customerService.getAllCustomers());
     }
 
 
 
-    @GetMapping("/{customerId}")
+    @GetMapping("/{customerId}/bookings")
     public ResponseEntity<Customer> getCustomer(@PathVariable Integer customerId) {
         return ResponseEntity.ok(this.customerService.getCustomerById(customerId));
     }

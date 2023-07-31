@@ -19,7 +19,7 @@ import com.examly.springapp.service.CancellationService;
 
 @RestController
 @CrossOrigin(origins="https://8081-dfabcadabfbffebcfbfbfaeedd.project.examly.io")
-@RequestMapping("/bookings/{bookingId}/cancellations")
+@RequestMapping("/api/v1")
 public class CancellationController {
 	private CancellationService cancellationService;
 
@@ -27,25 +27,29 @@ public class CancellationController {
         this.cancellationService = cancellationService;
     }
 
-    @PostMapping
+    @GetMapping("/cancellations")
+    public ResponseEntity<List<Cancellation>> getAllCancellations() {
+        return ResponseEntity.ok (this.cancellationService.getAllCancellations());
+    }
+    @PostMapping("/bookings/{bookingId}/cancellations")
     public ResponseEntity<Cancellation> createCancellation(@PathVariable int bookingId, @RequestBody Cancellation cancellation) {
         Cancellation createdCancellation = cancellationService.createCancellation(bookingId, cancellation);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdCancellation);
     }
 
-    @GetMapping
+    @GetMapping("/bookings/{bookingId}/cancellations")
     public ResponseEntity<List<Cancellation>> getAllCancellations(@PathVariable int bookingId) {
         List<Cancellation> cancellations = cancellationService.getAllCancellations(bookingId);
         return ResponseEntity.ok(cancellations);
     }
 
-    @PutMapping("/{cancellationId}")
+    @PutMapping("/bookings/{bookingId}/cancellations/{cancellationId}")
     public ResponseEntity<Cancellation> updateCancellation(@PathVariable int bookingId, @PathVariable int cancellationId, @RequestBody Cancellation updatedCancellation) {
         Cancellation savedCancellation = cancellationService.updateCancellation(bookingId, cancellationId, updatedCancellation);
         return ResponseEntity.ok(savedCancellation);
     }
 
-    @DeleteMapping("/{cancellationId}")
+    @DeleteMapping("/bookings/{bookingId}/cancellations/{cancellationId}")
     public ResponseEntity<Void> deleteCancellation(@PathVariable int bookingId, @PathVariable int cancellationId) {
         cancellationService.deleteCancellation(bookingId, cancellationId);
         return ResponseEntity.noContent().build();

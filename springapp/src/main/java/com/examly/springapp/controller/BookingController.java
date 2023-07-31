@@ -10,8 +10,8 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/")
-@RequestMapping()
+@CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/bookings")
+@RequestMapping("/api/v1")
 public class BookingController {
     // Add your controller methods here
     private final BookingService bookingService;
@@ -26,21 +26,21 @@ public class BookingController {
         return new ResponseEntity<>(bookings, HttpStatus.OK);
     }
 
-    @GetMapping("/bookings/{bookingId}")
+    @GetMapping("/{bookingId}")
     public ResponseEntity<Booking> getBookingById(@PathVariable int bookingId) {
-        Booking booking = bookingService.getBookingById(bookingId);
-        return new ResponseEntity<>(booking, HttpStatus.OK);
+        Booking bookings = bookingService.getBookingById(bookingId);
+        return new ResponseEntity<>(bookings, HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<Booking> createBooking(@RequestBody Booking booking) {
-        Booking createdBooking = bookingService.createBooking(booking);
+    public ResponseEntity<Booking> createBooking(@RequestBody Booking bookings) {
+        Booking createdBooking = bookingService.createBooking(bookings);
         return new ResponseEntity<>(createdBooking, HttpStatus.CREATED);
     }
 
     @PutMapping("/bookings/{bookingId}")
-    public ResponseEntity<Booking> updateBooking(@PathVariable int bookingId, @RequestBody Booking booking) {
-        Booking updatedBooking = bookingService.updateBooking(bookingId, booking);
+    public ResponseEntity<Booking> updateBooking(@PathVariable int bookingId, @RequestBody Booking bookings) {
+        Booking updatedBooking = bookingService.updateBooking(bookingId, bookings);
         return new ResponseEntity<>(updatedBooking, HttpStatus.OK);
     }
 

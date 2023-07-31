@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "https://8081-fdedbdfabffebceaeaadbdbabf.project.examly.io")
-@RequestMapping
+@RequestMapping("/api/v1")
 public class RoomController {
 
     @Autowired
