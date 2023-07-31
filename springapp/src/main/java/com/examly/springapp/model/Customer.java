@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "Hari")
 public class Customer {
@@ -31,6 +30,7 @@ public class Customer {
 	@Column(length = 12)
 	private int phone;
 
+	
 
 	public Customer(){
 		super();
