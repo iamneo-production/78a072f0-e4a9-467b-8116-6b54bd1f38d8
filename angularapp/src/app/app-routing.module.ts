@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+<<<<<<< HEAD
+
+const routes: Routes = [];
+=======
 
 
 const routes: Routes = [];
@@ -23,6 +27,7 @@ const routes: Routes = [{path:'bookings/:bookingId/cancellations',component:Canc
   {path:'adminregister',component:AdminregisterComponent},
   {path:'',component:LandingpageComponent}];
 
+>>>>>>> c78b0e057d0fddb0d072e213281d69fcf07a4cd7
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),BrowserModule,FormsModule,

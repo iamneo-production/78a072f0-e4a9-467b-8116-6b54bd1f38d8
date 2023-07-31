@@ -1,5 +1,6 @@
-package com.examly.springapp.model;
+package main.java.com.examly.springapp.model;
 
+//import jakarta.persistence.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,71 +9,69 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name = "Hari")
+@Table(name = "customer")
 public class Customer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    // Add the variables, constructors, getters, and setters for the Customer class
+    @Id
+    private int customerId;
+    @Column(name = "name")
+    private String name;
+    @Column(name = "email")
+    private String email;
+    @Column (name = "phone")
+    private String phone;
+    
+    public Customer() {
+    }
 
-	
-	private int customerId;
-	
-	@Column(name="name")
-	private String name;
-	
+    public Customer(int customerId, String name, String email, String phone) {
+        this.customerId = customerId;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
 
-	
-	@Column(length = 255)
-	private String email;
-	
+    public int getCustomerId() {
+        return this.customerId;
+    }
 
-	
-	@Column(length = 12)
-	private int phone;
+    public void setCustomerId(int id) {
+        this.customerId = id;
+    }
 
-	
+    public String getName() {
+        return this.name;
+    }
 
-	public Customer(){
-		super();
-	}
-	
+    public void setName(String customerName) {
+        this.name = customerName;
+    }
 
-	public  Customer( int customerId, String name,String email,
-			int phone ) {
-	    super();
-		this.customerId = customerId;
-		this.name = name;
-		this.email = email;
-		this.phone = phone;
+    public String getEmail() {
+        return this.email;
+    }
 
-	}
+    public void setEmail(String customerEmail) {
+        this.email = customerEmail;
+    }
 
-	public int getCustomerId() {
-		return this.customerId;
-	}
+    public String getPhone() {
+        return this.phone;
+    }
 
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
+    public void setPhone(String customerPhone) {
+        this.phone = customerPhone;
+    }
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getEmail() {
-		return this.email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public int getPhone() {
-		return this.phone;
-	}
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}	
+    @Override
+    public String toString() {
+        return "{" +
+            " customerId='" + getCustomerId() + "'" +
+            ", name='" + getName() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", phone='" + getPhone() + "'" +
+            "}";
+    }
 }
-
