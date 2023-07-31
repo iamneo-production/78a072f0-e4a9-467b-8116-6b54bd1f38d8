@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Your Bookings</h2>
+  <div class="search-bar">
+    <!--<input type="text" [formControl]= "searchText" placeholder="Search..." (input)="filterRooms()">-->
+    <input type="text" [formControl]= "roomTypeFilter" placeholder="Filter by Room Type" (input)= "filterRooms()" (focus)= "onSearchFocus()" (blur)= "onSearchBlur()">
+    <!--<input type="number" [formControl]= "roomPriceFilter" placeholder="Filter by Room Price" (input)="filterRooms()">-->
+  </div>
+  <div *ngIf= "showContent">
+    <ul *ngFor= "let room of rooms">
+      <li>
+        <h3 class="room-type">{{ room.type.toUpperCase() }}</h3>
+        <img *ngIf="room.type.toUpperCase()==='DELUXE'" [src]= "'assets/Deluxe.jpg'" alt="Room Image"> 
+        <img *ngIf="room.type.toUpperCase()==='CLASSIC'" [src]= "'assets/Classic.jpg'" alt="Room Image"> 
+        <img *ngIf="room.type.toUpperCase()==='STANDARD'" [src]= "'assets/Standard.jpg'" alt="Room Image"> 
+        <img *ngIf="room.type.toUpperCase()==='STANDARDDELUXE'" [src]= "'assets/StandardDeluxe.jpg'" alt="Room Image"> 
+        <img *ngIf="room.type.toUpperCase()==='STANDARDKING'" [src]= "'assets/StandardKing.jpg'" alt="Room Image"> 
+        <img *ngIf="room.type.toUpperCase()==='STANDARDQUEEN'" [src]= "'assets/StandardQueen.jpg'" alt="Room Image">
+        <img *ngIf="room.type.toUpperCase()==='SUITES'" [src]= "'assets/Suites.jpg'" alt="Room Image">  
+        <h4 class="room-price">Price : ${{ room.price }}</h4>
+        <p class="room-description">{{ room.description }}</p>
+        <p>check-in date : {{room.check_in_date}}</p>
+        <p>check-out date : {{room.check_out_date}}</p>
+        <button (click)="manageCancellations(room.id)">Cancel Booking</button>
+      </li>  
+    </ul>
+  </div>
+  
+  <div >
+    <ul *ngFor= "let room of filteredRooms">
+      <li>
+        <h3 class="room-type">{{ room.type }}</h3>
+        <img [src]="'assets/' + room.image" alt="Room Image">
+        <h4 class="room-price">Price : ${{ room.price }}</h4>
+        <p class="room-description">{{ room.description }}</p>
+        <p>check-in date : {{room.check_in_date}}</p>
+        <p>check-out date : {{room.check_out_date}}</p>
+        <button>Cancel Booking</button>
+      </li>  
+    </ul>
+  </div>
+</body>
+</html>
+
+
+
+
+
+

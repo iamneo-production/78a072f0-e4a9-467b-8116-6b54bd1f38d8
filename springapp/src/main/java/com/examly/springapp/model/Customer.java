@@ -1,7 +1,12 @@
 <<<<<<< HEAD
+package com.examly.springapp.model;
+
+=======
+<<<<<<< HEAD
 package main.java.com.examly.springapp.model;
 
 //import jakarta.persistence.*;
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +15,76 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+<<<<<<< HEAD
+@Entity
+@Table(name = "Hari")
+public class Customer {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	
+	private int customerId;
+	
+	@Column(name="name")
+	private String name;
+	
+
+	
+	@Column(length = 255)
+	private String email;
+	
+
+	
+	@Column(length = 10)
+	private int phone;
+
+	
+
+	public Customer(){
+		super();
+	}
+	
+
+	public  Customer( int customerId, String name,String email,
+			int phone ) {
+	    super();
+		this.customerId = customerId;
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+
+	}
+
+	public int getCustomerId() {
+		return this.customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return this.email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public int getPhone() {
+		return this.phone;
+	}
+	public void setPhone(int phone) {
+		this.phone = phone;
+	}	
+}
+
+=======
 
 @Entity
 @Table(name = "customer")
@@ -244,3 +319,4 @@ public class Customer {
 }
 
 >>>>>>> 6120d8a7af0dfc6e0ba75df0003c7fe594d06190
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c

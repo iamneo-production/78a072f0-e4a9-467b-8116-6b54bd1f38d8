@@ -26,6 +26,10 @@
             ],
             "styles": [
 <<<<<<< HEAD
+               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/custom-theme.scss",
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
 =======
@@ -35,6 +39,7 @@
 =======
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
 >>>>>>> 53a7fe76ea24bcd7d05a276c5880565f246b0a69
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
               "src/styles.css"
             ],
             "scripts": []
@@ -112,6 +117,9 @@
   },
   "cli": {
 <<<<<<< HEAD
+    "analytics": "e1e13816-7171-4538-89ec-757d5a75faf1"
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
     "analytics": "9fd795c3-1b3e-4f3d-b06d-9a95541f55fd"
 =======
@@ -121,5 +129,6 @@
 =======
     "analytics": "e1e13816-7171-4538-89ec-757d5a75faf1"
 >>>>>>> 6345a7a2dcc2f5a67fa01b308865a1d4eb0773f9
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
   }
 }

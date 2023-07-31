@@ -2,9 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 <<<<<<< HEAD
+import { RouterModule } from '@angular/router';
+=======
+<<<<<<< HEAD
 =======
 
 <<<<<<< HEAD
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 <<<<<<< HEAD
@@ -19,6 +23,31 @@ import {MatLineModule} from '@angular/material/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
 
+<<<<<<< HEAD
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerService } from './customer.service';
+import {HttpClientModule} from '@angular/common/http';
+import { CustomerComponent } from './user/user.component';
+import { BookingServiceComponent } from './booking-service/booking-service.component';
+import { BookingComponent } from './booking-form/booking-form.component';
+import { PaymentServiceComponent } from './payment-service/payment-service.component';
+import { CancellationComponent } from './cancellation/cancellation.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { RoomcustomerComponent } from './roomcustomer/roomcustomer.component';
+
+@NgModule({
+  declarations: [
+   AppComponent,
+   CustomerComponent,
+   BookingServiceComponent,
+   BookingComponent,
+   PaymentServiceComponent,
+   CancellationComponent,
+   RoomcustomerComponent
+=======
 const routes: Routes = [
   {path:'',component:BookingComponent}
 ];
@@ -95,7 +124,9 @@ import { HttpClientModule } from '@angular/common/http';
     PaymentComponent,
     SucessComponent,
 >>>>>>> 6120d8a7af0dfc6e0ba75df0003c7fe594d06190
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
   ],
+
   imports: [
     RouterModule,
     BrowserModule,
@@ -116,6 +147,19 @@ import { HttpClientModule } from '@angular/common/http';
 <<<<<<< HEAD
     BrowserAnimationsModule,
     BrowserModule,
+<<<<<<< HEAD
+    RouterModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatTabsModule,
+    MatButtonModule,
+    FormsModule
+  ],
+  providers: [CustomerService],
+=======
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -150,6 +194,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [CustomerService],
 >>>>>>> 6120d8a7af0dfc6e0ba75df0003c7fe594d06190
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
   bootstrap: [AppComponent]
 })
 

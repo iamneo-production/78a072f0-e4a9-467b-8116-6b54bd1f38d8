@@ -1,0 +1,36 @@
+h2{
+    background-color: #353a40;
+    background-size:cover;
+    height:70px;
+    color:whitesmoke;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 50px;
+    text-align:start;
+}
+li{
+        background-color:lightgray;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      
+}
+.search-bar{
+    padding: 20px;
+    margin-right: 30px;
+    border-radius: 10px;
+    width: 700px;
+    border-spacing: 10px;
+  }
+img{
+    width: 300px;
+}
+body{
+    background-color: lightyellow;
+    overflow : auto;
+}
+button{
+    background-color:lightyellow ;
+}
+

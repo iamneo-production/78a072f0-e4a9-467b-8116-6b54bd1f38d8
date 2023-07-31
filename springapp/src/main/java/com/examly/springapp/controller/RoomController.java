@@ -1,6 +1,9 @@
 package com.examly.springapp.controller;
 
+<<<<<<< HEAD
+=======
 import com.examly.springapp.exception.ResourceNotFoundException;
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
 import com.examly.springapp.model.Room;
 import com.examly.springapp.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +15,11 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+<<<<<<< HEAD
+@CrossOrigin(origins = "https://8081-eccfdafeaeefbffebceaeaadbdbabf.project.examly.io")
+=======
 @CrossOrigin(origins = "https://8081-fdedbdfabffebceaeaadbdbabf.project.examly.io")
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
 @RequestMapping
 public class RoomController {
 

@@ -53,7 +53,11 @@ public class CancellationService {
         Optional<Booking> optionalBooking = bookingRepository.findById(bookingId);
         if (optionalBooking.isPresent()) {
             Booking booking = optionalBooking.get();
+<<<<<<< HEAD
+            return cancellationRepository.findAllByBooking(booking);
+=======
             return cancellationRepository.findByBooking(booking);
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
         } else {
         	throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }

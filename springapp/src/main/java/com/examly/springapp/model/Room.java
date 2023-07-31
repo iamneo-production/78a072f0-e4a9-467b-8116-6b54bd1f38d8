@@ -1,9 +1,15 @@
 <<<<<<< HEAD
 package com.examly.springapp.model;
 
+import javax.persistence.*;
+=======
+<<<<<<< HEAD
+package com.examly.springapp.model;
+
 import java.time.LocalDate;
 import javax.persistence.*;
 import org.springframework.format.annotation.DateTimeFormat;
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
 
 @Entity
 @Table(name = "room")
@@ -83,6 +89,8 @@ public class Room {
 		this.availability = availability;
 	}
 }
+<<<<<<< HEAD
+=======
 =======
 package com.customer.Customer.model;
 
@@ -199,3 +207,4 @@ public class Room {
 
 }
 >>>>>>> 6120d8a7af0dfc6e0ba75df0003c7fe594d06190
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c

@@ -1,6 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 <<<<<<< HEAD
+import { AppComponent } from './app.component';
+import { CustomerComponent } from './user/user.component';
+import { PaymentServiceComponent } from './payment-service/payment-service.component';
+import { CancellationComponent } from './cancellation/cancellation.component';
+import { BookingComponent } from './booking-form/booking-form.component';
+import { BookingServiceComponent } from './booking-service/booking-service.component';
+import { RoomcustomerComponent } from './roomcustomer/roomcustomer.component';
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 import { AdminloginComponent } from './login/adminlogin/adminlogin.component';
@@ -83,8 +92,16 @@ const routes: Routes = [];
 >>>>>>> 53a7fe76ea24bcd7d05a276c5880565f246b0a69
 =======
 
+>>>>>>> ce894de4bed85d37444692bfbee01f5399e80e9c
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'user',component:CustomerComponent},
+  {path:'payment',component:PaymentServiceComponent},
+  {path:'bookings/:bookingId/cancellations',component:CancellationComponent},
+  {path:'bookingform',component:BookingComponent},
+  {path:'bookingservice',component:BookingServiceComponent},
+  {path:"rooms",component:RoomcustomerComponent}
+];
 
 import { CancellationComponent } from './cancellation/cancellation.component';
 import { CustomerComponent } from './customer/customer.component';
