@@ -1,0 +1,90 @@
+#para1 img{
+    width: 180px;
+    height: 180px;
+    border-radius: 150px;
+    background-color: azure;
+  
+  }
+  
+  .center{
+    float: left;
+    width:fit-content;
+    height: fit-content;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+  
+  }
+  .code{
+    background-color: wheat;
+    width: 79%;
+    height: 30vh;
+    border-radius: 10px;
+    margin: 250px;
+    margin-left: 98px;
+   
+    
+  }
+  .tod{
+    background-color: gray;
+    width: 80%;
+    height: 40vh;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-left: 90px;
+  }
+  .button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin: 20px;
+    border-radius: 10px;
+    margin-top: 0vh;
+  }
+  .top{
+    height: 20vh;
+    background-color: blue;
+  }
+  
+  from .center .rom{
+    width: calc(100% / 2 - 20px);
+  
+  }
+   .p{
+    height: 25px;
+    width: 30%;
+  
+  }
+  label{
+    font-size: 500;
+    margin-bottom: 5px;
+  }
+  .p1{
+    height: 25px;
+    width: 30%;
+  }
+ 
+  header {
+    background-color: #353a40;
+    padding: 20px;
+    text-align: right;
+  }
+ 
+  a {
+    color: #eef0f1;
+    text-decoration: none; 
+
+  }
+  
+  
+  a:hover {
+    color: #afb4b9; 
+    text-decoration: underline; 
+  }
