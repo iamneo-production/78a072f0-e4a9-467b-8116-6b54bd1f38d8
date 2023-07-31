@@ -1,11 +1,13 @@
-package com.customer.Customer.controller;
-import com.customer.Customer.exception.ResourceNotFoundException;
-import com.customer.Customer.model.Payment;
-import com.customer.Customer.repository.PaymentRepository;
+package com.examly.springapp.controller;
+import com.examly.springapp.exception.ResourceNotFoundException;
+import com.examly.springapp.model.Payment;
+import com.examly.springapp.model.Payment;
+import com.examly.springapp.repository.PaymentRepository;
 import org.apache.catalina.LifecycleState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +15,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins ="https://8081-aeadcaeeecbffebcfbfbfaeedd.project.examly.io/")
 
 public class PaymentController {
     @Autowired

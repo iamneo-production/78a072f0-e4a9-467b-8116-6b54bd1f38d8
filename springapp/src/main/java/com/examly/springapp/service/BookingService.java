@@ -1,11 +1,12 @@
-package main.java.com.examly.springapp.service;
+package com.examly.springapp.service;
 
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import main.java.com.examly.springapp.model.Booking;
-import main.java.com.examly.springapp.repository.BookingRepo;
+import com.examly.springapp.model.Booking;
+// import com.booking.bookingapi.model.Customer;
+import com.examly.springapp.repository.BookingRepo;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class BookingService {
     public Booking getBookingById(int bookingId) {
         return bookingRepo.findById(bookingId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid booking Id:" + bookingId));
-        
+        // return bookingRepo.get(bookingId);
     }
 
     public Booking createBooking(Booking booking) {
@@ -40,14 +41,16 @@ public class BookingService {
         booking.setGuests(updatedBooking.getGuests());
         booking.setPreferences(updatedBooking.getPreferences());
         booking.setRoomType(updatedBooking.getRoomType());
-        booking.setCustomer(updatedBooking.getCustomer());
+        booking.setCustomer1(updatedBooking.getCustomer1());
 
         return bookingRepo.save(booking);
-        
+        // bookingRepo.put(bookingId, updatedBooking);
+        // return updatedBooking;
     }
 
     public void deleteBooking(int bookingId) {
         bookingRepo.deleteById(bookingId);
+        // bookingRepo.remove(bookingId);
     }
 
 }

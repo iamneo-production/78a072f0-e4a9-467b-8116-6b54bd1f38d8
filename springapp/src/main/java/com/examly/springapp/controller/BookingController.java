@@ -1,25 +1,16 @@
-package main.java.com.examly.springapp.controller;
+package com.examly.springapp.controller;
 
+import org.springframework.web.bind.annotation.*;
+import com.examly.springapp.model.Booking;
+import com.examly.springapp.service.BookingService;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import main.java.com.examly.springapp.model.Booking;
-import main.java.com.examly.springapp.service.BookingService;
 
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins="https://8081-addcfefcbbffebceaeaadbdbabf.project.examly.io/")
-
+@CrossOrigin(origins="https://8081-aeadcaeeecbffebcfbfbfaeedd.project.examly.io/")
 @RequestMapping("/bookings")
 public class BookingController {
     // Add your controller methods here
@@ -31,7 +22,7 @@ public class BookingController {
 
     @GetMapping
     public ResponseEntity<List<Booking>> getAllBookings() {
-        List<Booking> bookings = bookingService.getAllBookings();
+       List<Booking> bookings=bookingService.getAllBookings();
         return new ResponseEntity<>(bookings, HttpStatus.OK);
     }
 

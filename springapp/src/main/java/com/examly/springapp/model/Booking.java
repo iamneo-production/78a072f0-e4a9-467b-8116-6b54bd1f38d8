@@ -1,20 +1,14 @@
-package main.java.com.examly.springapp.model;
+package com.examly.springapp.model;
 
 import java.util.Date;
 
+// import java.time.LocalDate;
+import javax.persistence.*;
+// import org.springframework.format.annotation.DateTimeFormat;
 
-//import jakarta.persistence.*;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "bookingdb")   
-
+@Table(name = "bookingdb")
 public class Booking {
 
     @Id
@@ -30,21 +24,21 @@ public class Booking {
     @Column(name = "preferences")
     private String preferences;
     @ManyToOne
-    private Customer customer;
+    private Customer1 customer1;
 
     // Constructor
     public Booking() {
     }
 
     // Getters and Setters
-    public Booking(int id, Date checkInDate, Date checkOutDate, String roomType, int guests, String preferences, Customer customer) {
+    public Booking(int id, Date checkInDate, Date checkOutDate, String roomType, int guests, String preferences, Customer1 customer1) {
         this.id = id;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.roomType = roomType;
         this.guests = guests;
         this.preferences = preferences;
-        this.customer = customer;
+        this.customer1 = customer1;
     }
 
     public int getId() {
@@ -71,12 +65,12 @@ public class Booking {
         this.checkOutDate = checkOutDate;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Customer1 getCustomer1() {
+        return customer1;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomer1(Customer1 customer1) {
+        this.customer1 = customer1;
     }
 
     public String getRoomType() {

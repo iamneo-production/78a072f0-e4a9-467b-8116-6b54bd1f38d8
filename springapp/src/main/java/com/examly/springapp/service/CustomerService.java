@@ -1,7 +1,7 @@
-package com.customer.Customer.service;
+package com.examly.springapp.service;
 
-import com.customer.Customer.model.Customer;
-import com.customer.Customer.repository.CustomerRepository;
+import com.examly.springapp.model.Customer;
+import com.examly.springapp.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.customer.Customer.model;
+package com.examly.springapp.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.time.LocalDateTime;
 

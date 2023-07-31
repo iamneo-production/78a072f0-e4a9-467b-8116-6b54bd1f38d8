@@ -1,8 +1,8 @@
-package com.customer.Customer.controller;
+package com.examly.springapp.controller;
 
-import com.customer.Customer.exception.ResourceNotFoundException;
-import com.customer.Customer.model.Customer;
-import com.customer.Customer.repository.CustomerRepository;
+import com.examly.springapp.exception.ResourceNotFoundException;
+import com.examly.springapp.model.Customer;
+import com.examly.springapp.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://8081-aeadcaeeecbffebcfbfbfaeedd.project.examly.io/")
 
 public class CustomerController {
     @Autowired
@@ -47,7 +47,7 @@ public class CustomerController {
     // update customer by id
     //http://localhost:8080/api/v1/customer/1
     @PutMapping("/customer/{id}")
-    public ResponseEntity<Customer> updateCustomerById(@PathVariable Long id, @org.jetbrains.annotations.NotNull @RequestBody Customer customer){
+    public ResponseEntity<Customer> updateCustomerById(@PathVariable Long id, @RequestBody Customer customer){
         Customer getCust= customerRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Customer not exist with id :" + id));
         getCust.setName(customer.getName());
         getCust.setCheckIn(customer.getCheckIn());
