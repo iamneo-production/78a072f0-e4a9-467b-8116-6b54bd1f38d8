@@ -7,7 +7,11 @@ import { CancellationService } from '../cancellation.service';
   templateUrl: './cancellation.component.html',
   styleUrls: ['./cancellation.component.css']
 })
+<<<<<<< HEAD
 export class CancellationComponent implements OnInit {
+=======
+export class CancellationComponent implements OnInit{
+>>>>>>> 5a514ab984042dff257d7cef947e3162e507ad3d
   bookingId!: number;
   cancellations?: any[];
   newCancellation: any = {};

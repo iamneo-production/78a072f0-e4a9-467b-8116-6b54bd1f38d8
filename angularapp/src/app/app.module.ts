@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminloginComponent } from './login/adminlogin/adminlogin.component';
@@ -53,10 +52,54 @@ import { CancellationComponent } from './cancellation/cancellation.component';
     BookingComponent,
     CancellationComponent
   
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { AdminregisterComponent } from './adminregister/adminregister.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+
+
+const routes:Routes = [
+  {path:'register',component:RegisterComponent},
+  {path:'login',component:LoginComponent},
+  {path:'adminlogin',component:AdminloginComponent},
+  {path:'adminregister',component:AdminregisterComponent},
+  {path:'',component:LandingpageComponent}
+]
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    LandingpageComponent,
+    AdminregisterComponent,
+    AdminloginComponent,
+    
+  ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes),
+
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { CancellationComponent } from './cancellation/cancellation.component';
+import { CustomerComponent } from './customer/customer.component';
+import { HttpClientModule } from '@angular/common/http';
+@NgModule({
+  declarations: [
+    AppComponent,
+    CancellationComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
     FormsModule,
     RouterModule,
     HttpClientModule,
@@ -64,8 +107,15 @@ import { CancellationComponent } from './cancellation/cancellation.component';
     BrowserAnimationsModule,
     MatTabsModule,
     ReactiveFormsModule
+=======
+
+    FormsModule,
+    HttpClientModule
+>>>>>>> 5a514ab984042dff257d7cef947e3162e507ad3d
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+
