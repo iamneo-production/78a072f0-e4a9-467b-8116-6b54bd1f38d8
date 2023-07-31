@@ -19,7 +19,7 @@ import com.examly.springapp.service.CancellationService;
 
 @RestController
 @CrossOrigin(origins="https://8081-dfabcadabfbffebcfbfbfaeedd.project.examly.io")
-@RequestMapping("/cancellations")
+@RequestMapping("/api/v1")
 public class CancellationController {
 	private CancellationService cancellationService;
 
@@ -27,7 +27,11 @@ public class CancellationController {
         this.cancellationService = cancellationService;
     }
 
-    @PostMapping
+    @GetMapping("/cancellations")
+    public ResponseEntity<List<Cancellation>> getAllCancellations() {
+        return ResponseEntity.ok (this.cancellationService.getAllCancellations());
+    }
+    @PostMapping("/bookings/{bookingId}/cancellations")
     public ResponseEntity<Cancellation> createCancellation(@PathVariable int bookingId, @RequestBody Cancellation cancellation) {
         Cancellation createdCancellation = cancellationService.createCancellation(bookingId, cancellation);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdCancellation);

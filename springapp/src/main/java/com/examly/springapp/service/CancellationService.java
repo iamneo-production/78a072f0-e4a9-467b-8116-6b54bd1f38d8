@@ -22,6 +22,9 @@ public class CancellationService {
         this.cancellationRepository = cancellationRepository;
     }
 
+    public List<Cancellation> getAllCancellations() {
+        return cancellationRepository.findAll();
+    }
     public Cancellation createCancellation(int bookingId, Cancellation cancellation) {
         Optional<Booking> optionalBooking = bookingRepository.findById(bookingId);
         if (optionalBooking.isPresent()) {

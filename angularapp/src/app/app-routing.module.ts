@@ -18,29 +18,30 @@ import { CustomerServiceComponent } from './customer-service/customer-service.co
 import { ReportComponent } from './report/report.component';
 import { NotificationComponent } from './notification/notification.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { AuthService } from './auth.service';
 
 
 
 const routes: Routes = [
   {path:'', redirectTo:'/login',pathMatch:'full'},
-  {path:'landingpage',component:LandingpageComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'adminregister',component:AdminregisterComponent},
-  {path:'login',component:LoginComponent},
-  {path:'adminlogin',component:AdminloginComponent},
-  {path:'dashboard',component:DashboardComponent},
-  {path:'admin',component:AdminComponent},
-  {path: 'component', component: CustomerComponent},
-  {path:"admin/rooms",component:RoomadminComponent},
+  {path:'landingpage',component:LandingpageComponent,canActivate:[AuthService]},
+  {path:'register',component:RegisterComponent,canActivate:[AuthService]},
+  {path:'adminregister',component:AdminregisterComponent,canActivate:[AuthService]},
+  {path:'login',component:LoginComponent,canActivate:[AuthService]},
+  {path:'adminlogin',component:AdminloginComponent,canActivate:[AuthService]},
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthService]},
+  {path:'admin',component:AdminComponent,canActivate:[AuthService]},
+  {path: 'component', component: CustomerComponent,canActivate:[AuthService]},
+  {path:"admin/rooms",component:RoomadminComponent,canActivate:[AuthService]},
   {path:"rooms",component:RoomcustomerComponent},
-  {path:"updateroom/:id",component:UpdateroomComponent},
-  {path:'cancellations',component:CancellationComponent}, 
-  {path:'booking',component:BookingComponent},
-  {path:'payment', component:PaymentComponent},
-  { path:'customer-service', component: CustomerServiceComponent },
-  {path:'report',component:ReportComponent},
-  {path:'notification',component:NotificationComponent},
- {path: 'user-dashboard', component: UserDashboardComponent},
+  {path:"updateroom/:id",component:UpdateroomComponent,canActivate:[AuthService]},
+  {path:'cancellations',component:CancellationComponent,canActivate:[AuthService]}, 
+  {path:'booking',component:BookingComponent,canActivate:[AuthService]},
+  {path:'payment', component:PaymentComponent,canActivate:[AuthService]},
+  { path:'customer-service', component: CustomerServiceComponent,canActivate:[AuthService] },
+  {path:'report',component:ReportComponent,canActivate:[AuthService]},
+  {path:'notification',component:NotificationComponent,canActivate:[AuthService]},
+ {path: 'user-dashboard', component: UserDashboardComponent,canActivate:[AuthService]},
   
   
   

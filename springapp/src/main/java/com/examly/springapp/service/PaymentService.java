@@ -20,6 +20,10 @@ public class PaymentService {
         this.paymentRepository = paymentRepository;
     }
 
+    public List<Payment> getAllpayments() {
+        return paymentRepository.findAll();
+    }
+
     // Method to add a new payment
     public Payment addPayment(Payment payment) {
         // Set the paymentDateTime to the current date and time

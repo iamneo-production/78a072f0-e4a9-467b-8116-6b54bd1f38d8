@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io/bookings")
-@RequestMapping
+@RequestMapping("/api/v1")
 public class BookingController {
     // Add your controller methods here
     private final BookingService bookingService;
@@ -26,7 +26,7 @@ public class BookingController {
         return new ResponseEntity<>(bookings, HttpStatus.OK);
     }
 
-    @GetMapping("/bookings/{bookingId}")
+    @GetMapping("/{bookingId}")
     public ResponseEntity<Booking> getBookingById(@PathVariable int bookingId) {
         Booking bookings = bookingService.getBookingById(bookingId);
         return new ResponseEntity<>(bookings, HttpStatus.OK);

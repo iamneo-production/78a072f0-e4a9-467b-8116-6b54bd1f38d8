@@ -10,17 +10,26 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.examly.springapp.service.PaymentService;
 
 @RestController
-@RequestMapping(" /booking/payment")
+@RequestMapping("/api/v1")
 @CrossOrigin(origins = "https://8081-ceafffcbaffbffebceaeaadbdbabf.project.examly.io")
 
 public class PaymentController {
     @Autowired
     PaymentRepository paymentRepository;
+    private final PaymentService paymentService; 
+    
+    public PaymentController(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+    @GetMapping("/payments")
+    public ResponseEntity<List<Payment>> getAllPayments() {
+        return ResponseEntity.ok (this.paymentService.getAllPayments());
+    }
 
-
-    @GetMapping("/bookings/{bookingId}/payments")
+    @GetMapping("/bookings/{bookingId}")
     public List<Payment> displayPayment(@PathVariable Long bookingId) 
     {return paymentRepository.findAll();}
     
