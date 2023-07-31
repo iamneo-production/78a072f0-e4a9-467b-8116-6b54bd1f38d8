@@ -6,7 +6,6 @@ import { PaymentServiceComponent } from './payment-service/payment-service.compo
 import { CancellationComponent } from './cancellation/cancellation.component';
 import { BookingComponent } from './booking-form/booking-form.component';
 import { BookingServiceComponent } from './booking-service/booking-service.component';
-import { MyBookingComponent } from './my-booking/my-booking.component';
 import { RoomcustomerComponent } from './roomcustomer/roomcustomer.component';
 
 const routes: Routes = [
@@ -15,9 +14,7 @@ const routes: Routes = [
   {path:'bookings/:bookingId/cancellations',component:CancellationComponent},
   {path:'bookingform',component:BookingComponent},
   {path:'bookingservice',component:BookingServiceComponent},
-  {path:"rooms",component:RoomcustomerComponent},
-  {path:'mybooking',component:MyBookingComponent},
- 
+  {path:"rooms",component:RoomcustomerComponent}
 ];
 
 @NgModule({
