@@ -1,12 +1,9 @@
-<div>
-    <img src="../assets/images/hotel-banner.63885da4032201.67905415.png" >
-  </div>
-  <div class="booking-form-container">
+  <div class="total-crd">
     <div class="booking-form">
       <div class="booking">
         <h2>Booking Form</h2>
       </div>
-      <form (ngSubmit)="onSubmit()" #bookingForm="ngForm" class="form-grid">
+      <form (ngSubmit)="onSubmit(value)" #bookingForm="ngForm" class="form-grid">
         <div class="left-column">
           <br>
           <div class="name">
@@ -35,11 +32,8 @@
             </select>
           </div>
           <br>
-          <br>
-          <div class="button">
-            <button mat-raised-button color="accent" type="submit">Book Now</button>
-          </div>
-        </div>
+         
+        
   
         <div class="right-column">
           <br>
@@ -66,6 +60,8 @@
             <textarea id="preferences" name="preferences" [(ngModel)]="user.preferences"></textarea>
           </div>
           <br>
+          <button class="btn btn-primary" type="submit" routerLink="/user-dashboard/payment">Book Now</button>
+        </div>
         </div>
       </form>
     </div>

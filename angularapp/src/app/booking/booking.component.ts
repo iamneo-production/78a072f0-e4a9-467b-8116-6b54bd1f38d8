@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking',
@@ -7,9 +8,10 @@ import { HttpClient} from '@angular/common/http';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent {
+  value:any;
   title = 'booking1';
   user:any={};
-  id:number=1;
+  eid:number=1;
   booking = {
     name:'',
     email:'',
@@ -24,26 +26,28 @@ export class BookingComponent {
   roomTypes = ['Standard Queen','Standard King', 'Standard','Deluxe','Super Deluxe','Deluxe','Suites'];
 
 
-constructor(private http: HttpClient) { }
+constructor(private http: HttpClient,private router:Router) { }
 
-onSubmit(): void {
-  console.log(this.booking)
-  const booking = {
-    name: this.user.name,
-    email: this.user.email,
-    phone: this.user.phone,
-    roomType: this.user.roomType,
-    checkInDate: this.user.checkInDate,
-    checkOutDate: this.user.checkOutDate,
-    guests: this.user.guests,
-    preferences: this.user.preferences
-  };
-  console.log(booking);
-  const url = `https://8080-addcfefcbbffebceaeaadbdbabf.project.examly.io`;
-  this.http.post(url,booking)
-     .subscribe(createdUser => {
-     console.log('User created:', createdUser);
-       });
+onSubmit(value:any): void {
+  if(value===true){
+    console.log(this.booking)
+    const booking = {
+      name: this.user.name,
+      email: this.user.email,
+      phone: this.user.phone,
+      roomType: this.user.roomType,
+      checkInDate: this.user.checkInDate,
+      checkOutDate: this.user.checkOutDate,
+      guests: this.user.guests,
+      preferences: this.user.preferences
+      
+  }
+  
+  }
+  
+  else{
+    return console.error("invalid action");
+    
+  }
 }
-
 }

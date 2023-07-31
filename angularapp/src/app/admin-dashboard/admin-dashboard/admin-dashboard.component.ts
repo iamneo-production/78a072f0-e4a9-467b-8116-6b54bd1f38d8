@@ -6,6 +6,7 @@ import { Component, ElementRef } from '@angular/core';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent {
+  title = 'admin-pannel';
   route: any;
   profilePicturePath: string="../assets/admin-icons.png"
 
