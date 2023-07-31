@@ -1,5 +1,6 @@
 package com.examly.springapp.controller;
 
-public class CustomerController {
+
+public class CancellationController {
     
 }

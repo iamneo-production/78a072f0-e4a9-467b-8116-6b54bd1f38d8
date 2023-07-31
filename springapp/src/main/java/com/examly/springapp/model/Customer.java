@@ -1,78 +1,63 @@
 package com.examly.springapp.model;
 
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
-@Table(name = "Hari")
 public class Customer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int customerId;
+    private String name;
+    private String email;
+    private String phone;
+    @OneToMany(mappedBy="customer")
+    private List<Booking> bookings;
 
-	
-	private int customerId;
-	
-	@Column(name="name")
-	private String name;
-	
+    public Customer() {
+        // Default constructor
+    }
 
-	
-	@Column(length = 255)
-	private String email;
-	
+    public Customer(int customerId, String name, String email, String phone) {
+        this.customerId = customerId;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
 
-	
-	@Column(length = 12)
-	private int phone;
+    public int getCustomerId() {
+        return customerId;
+    }
 
-	
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
 
-	public Customer(){
-		super();
-	}
-	
+    public String getName() {
+        return name;
+    }
 
-	public  Customer( int customerId, String name,String email,
-			int phone ) {
-	    super();
-		this.customerId = customerId;
-		this.name = name;
-		this.email = email;
-		this.phone = phone;
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public int getCustomerId() {
-		return this.customerId;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getEmail() {
-		return this.email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public int getPhone() {
-		return this.phone;
-	}
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}	
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 }
-
