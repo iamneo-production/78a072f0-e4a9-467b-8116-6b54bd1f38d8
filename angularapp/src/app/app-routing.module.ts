@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { AdminloginComponent } from './login/adminlogin/adminlogin.component';
 import { AdminregisterComponent } from './login/adminregister/adminregister.component';
 import { LandingpageComponent } from './login/landingpage/landingpage.component';
@@ -78,6 +79,10 @@ const routes: Routes = [
 ];
 =======
 
+const routes: Routes = [];
+>>>>>>> 53a7fe76ea24bcd7d05a276c5880565f246b0a69
+=======
+
 
 const routes: Routes = [];
 
@@ -100,7 +105,11 @@ const routes: Routes = [{path:'bookings/:bookingId/cancellations',component:Canc
   {path:'adminregister',component:AdminregisterComponent},
   {path:'',component:LandingpageComponent}];
 
+<<<<<<< HEAD
 >>>>>>> 5a514ab984042dff257d7cef947e3162e507ad3d
+=======
+>>>>>>> c78b0e057d0fddb0d072e213281d69fcf07a4cd7
+>>>>>>> 53a7fe76ea24bcd7d05a276c5880565f246b0a69
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),BrowserModule,FormsModule,
