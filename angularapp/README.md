@@ -1,6 +1,15 @@
 # Angularapp
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+>>>>>>> 53a7fe76ea24bcd7d05a276c5880565f246b0a69
+=======
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.2.
+>>>>>>> 5a514ab984042dff257d7cef947e3162e507ad3d
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+>>>>>>> c78b0e057d0fddb0d072e213281d69fcf07a4cd7
 
 ## Development server
 
