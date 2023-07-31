@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { AdminloginComponent } from './login/adminlogin/adminlogin.component';
 import { AdminregisterComponent } from './login/adminregister/adminregister.component';
 import { LandingpageComponent } from './login/landingpage/landingpage.component';
@@ -59,6 +60,21 @@ const routes: Routes = [
     ]
   }
   
+=======
+import { RoomcustomerComponent } from './roomcustomer/roomcustomer.component';
+import { RoomadminComponent } from './roomadmin/roomadmin.component';
+import { UpdateroomComponent } from './updateroom/updateroom.component';
+import { BookingComponent } from './booking/booking.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+
+const routes: Routes = [
+  {path:"",component:RoomcustomerComponent},
+  {path:"admin/rooms",component:RoomadminComponent},
+  {path:"rooms",component:RoomcustomerComponent},
+  {path:"updateroom/:id",component:UpdateroomComponent},
+  {path:"landingpage",component:LandingpageComponent},
+  {path:"booking",component:BookingComponent}
+>>>>>>> 6345a7a2dcc2f5a67fa01b308865a1d4eb0773f9
 ];
 =======
 

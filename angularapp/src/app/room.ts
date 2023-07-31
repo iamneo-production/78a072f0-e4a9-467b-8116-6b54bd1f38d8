@@ -1,13 +1,8 @@
 export class Room {
-    roomNumber   !:number;
-    category     ?:String;
-    roomType     ?:any;
-    arrivalDate  ?:Date;
-    departDate   ?:Date;
-    noOfGuests   ?:number;
-    price        ?:number;
-    availability ?:number;capacity: any;
-pricePerNight: any;
-;
- }
- 
+    roomId   !: number;
+    category?: String;
+    roomType?: any;
+    capacity?: number;
+    pricePerNight?: number;
+    availability?: number;;
+}

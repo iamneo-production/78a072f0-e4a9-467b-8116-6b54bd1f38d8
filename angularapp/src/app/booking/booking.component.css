@@ -1,3 +1,78 @@
+<<<<<<< HEAD
 button{
     background-color: rgba(43, 63, 218, 0.877);
 }
+=======
+.name{
+    padding-left: 50px;
+}
+
+.email{
+    padding-left: 50px;
+}
+
+.phone{
+    padding-left: 50px;
+}
+
+.roomType{
+    padding-left: 50px;
+    display: flex;
+    
+}
+
+.Dates{
+    padding-left: 50px;
+}
+
+.Dates2{
+    padding-left: 50px;
+}
+
+.Guests{
+    padding-left: 50px;
+}
+
+.Preferences{
+    padding-left: 50px;;
+}
+
+.booking-form-container{
+    font-size: 20px;
+}
+
+.booking-form{
+    padding-left: 50px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .left-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .right-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  width: 30%;
+  padding: 1px;
+  font-size: 16px;
+}
+
+  .booking{
+    text-align: center;
+  }
+>>>>>>> 6345a7a2dcc2f5a67fa01b308865a1d4eb0773f9

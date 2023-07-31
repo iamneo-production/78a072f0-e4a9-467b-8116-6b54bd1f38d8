@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
 
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -28,10 +30,35 @@ import { CustomerProfileComponent } from './customer-profile/customer-profile.co
 import { BookingComponent } from './booking/booking.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
 
+=======
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { RoomcustomerComponent } from './roomcustomer/roomcustomer.component';
+import { RoomadminComponent } from './roomadmin/roomadmin.component';
+import { UpdateroomComponent } from './updateroom/updateroom.component';
+
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BookingComponent } from './booking/booking.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+
+const routes: Routes = [
+  {path:"",component:RoomcustomerComponent},
+  {path:"roomadmin",component:RoomadminComponent},
+  {path:"roomcustomer",component:RoomcustomerComponent},
+  {path:"updateroom",component:UpdateroomComponent},
+  {path:"booking",component:BookingComponent},
+  {path:"landingpage",component:LandingpageComponent}
+];
+>>>>>>> 6345a7a2dcc2f5a67fa01b308865a1d4eb0773f9
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     AdminloginComponent,
     AdminregisterComponent,
     LandingpageComponent,
@@ -95,10 +122,19 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     CancellationComponent,
     CustomerComponent
+=======
+    RoomcustomerComponent,
+    RoomadminComponent,
+    UpdateroomComponent,
+    BookingComponent,
+    LandingpageComponent
+>>>>>>> 6345a7a2dcc2f5a67fa01b308865a1d4eb0773f9
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
 <<<<<<< HEAD
     FormsModule,
     RouterModule,
@@ -112,6 +148,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
 >>>>>>> 5a514ab984042dff257d7cef947e3162e507ad3d
+=======
+    HttpClientModule,
+    FormsModule,
+    NoopAnimationsModule,
+    MatTabsModule,
+    MatButtonModule,
+>>>>>>> 6345a7a2dcc2f5a67fa01b308865a1d4eb0773f9
   ],
   providers: [],
   bootstrap: [AppComponent]
